@@ -98,7 +98,7 @@ public class CategoriaActivity extends AppCompatActivity implements View.OnClick
             list.getCacheColorHint();
             list.getBaseline();
             adapter.notifyDataSetChanged();
-            System.out.println("SOLLLLLLLLLLLLIIIIIIIIIICIIIIIIIIIITUUU  "+idSolicitud);
+            System.out.println("Solicitud  "+idSolicitud);
         }
 
     }
