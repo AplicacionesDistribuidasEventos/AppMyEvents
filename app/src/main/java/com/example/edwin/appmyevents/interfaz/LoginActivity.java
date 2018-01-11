@@ -56,7 +56,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         clienteRest = new ClienteRest(this);
 
         try {
-            String url = "http://192.168.1.13:8080/MyEvents/rs/usuarios/login";
+            String url = "http://192.168.0.101:8080/MyEvents/rs/usuarios/login";
 
             Login l = new Login();
 

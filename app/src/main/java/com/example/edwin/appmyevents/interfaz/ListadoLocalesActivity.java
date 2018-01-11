@@ -51,7 +51,7 @@ public class ListadoLocalesActivity extends AppCompatActivity implements OnTaskC
 
         try {
 
-            String url1 = "http://192.168.1.13:8080/MyEvents/rs/locales/listado-locales";
+            String url1 = "http://192.168.0.101:8080/MyEvents/rs/locales/listado-locales";
             clienteRest.doGet(url1, null,WS_CONSULTA,true);
 
         }catch (Exception e){

@@ -60,8 +60,9 @@
         android:id="@+id/btnVerPerfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/btnEliminarUsuario"
-        android:layout_marginStart="32dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="57dp"
         android:layout_toEndOf="@+id/btnEliminarUsuario"
         android:text="Ver Perfil" />
 

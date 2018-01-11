@@ -54,7 +54,6 @@ public class ListadoEventosActivity extends AppCompatActivity implements OnTaskC
         list11.setOnItemClickListener(this);
         //listarEvento(new ArrayList<Evento>());
 
-
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
 
     }
@@ -69,8 +68,8 @@ public class ListadoEventosActivity extends AppCompatActivity implements OnTaskC
 
         try {
 
-            String url1 = "http://192.168.1.15:8080/MyEvents/rs/categoria/listado-categorias";
-            String url2 = "http://192.168.1.13:8080/MyEvents/rs/eventos/listado-eventos";
+            String url1 = "http://192.168.0.101:8080/MyEvents/rs/categoria/listado-categorias";
+            String url2 = "http://192.168.0.101:8080/MyEvents/rs/eventos/listado-eventos";
             clienteRest.doGet(url2, null,WS_CONSULTA,true);
 
         }catch (Exception e){
@@ -85,7 +84,7 @@ public class ListadoEventosActivity extends AppCompatActivity implements OnTaskC
 
         try {
 
-            String url2 = "http://192.168.1.15:8080/MyEvents/rs/eventos/listado-categoria-eventos?id_categoria=";
+            String url2 = "http://192.168.0.101:8080/MyEvents/rs/eventos/listado-categoria-eventos?id_categoria=";
             clienteRest.doGet(url2, null,WS_CONSULTA,true);
             //clienteRest.doGet(url2, null,WS_CONSULTA,true);
         }catch (Exception e){

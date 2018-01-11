@@ -25,16 +25,18 @@ public class Persona {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    public String setNombre(String nombre) {
         this.nombre = nombre;
+        return nombre;
     }
 
     public String getApellido() {
         return apellido;
     }
 
-    public void setApellido(String apellido) {
+    public String setApellido(String apellido) {
         this.apellido = apellido;
+        return apellido;
     }
 
     public String getCedula() {
@@ -49,8 +51,9 @@ public class Persona {
         return correo;
     }
 
-    public void setCorreo(String correo) {
+    public String setCorreo(String correo) {
         this.correo = correo;
+        return correo;
     }
 
     public String getContrasenia() {

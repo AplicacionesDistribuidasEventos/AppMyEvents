@@ -66,6 +66,9 @@ public class MainActivity extends AppCompatActivity
         Button btnEliminaUsuario = (Button) findViewById(R.id.btnEliminarUsuario);
         btnEliminaUsuario.setOnClickListener(this);
 
+        Button btnVerPerfil = (Button) findViewById(R.id.btnVerPerfil);
+        btnVerPerfil.setOnClickListener(this);
+
         //eliminarUsuario();
     }
 
@@ -162,16 +165,8 @@ public class MainActivity extends AppCompatActivity
                 break;
 
             case R.id.btnVerPerfil:
-                verUsuario();
-                Intent intent3 = new Intent(this, Ingreso.class);
-                startActivity(intent3);
-
-                Context context1 = getApplicationContext();
-                CharSequence text1 = "Usuario Eliminado";
-                int duracion1 = Toast.LENGTH_SHORT;
-
-                Toast toast1 = Toast.makeText(context1,text1,duracion1);
-                toast1.show();
+                Intent intent4 = new Intent(this,EditUsuario.class);
+                startActivity(intent4);
                 break;
             default:
                 break;
@@ -187,7 +182,7 @@ public class MainActivity extends AppCompatActivity
 
         try {
 
-            String url = "http://192.168.1.13:8080/MyEvents/rs/usuarios/eliminar-usuario?id_usuario="+ LoginActivity.cod_per;
+            String url = "http://192.168.0.101:8080/MyEvents/rs/usuarios/eliminar-usuario?id_usuario="+ LoginActivity.cod_per;
             clienteRest.doGet(url, null,WS_CONSULTA,true);
 
         }catch (Exception e){
@@ -203,7 +198,7 @@ public class MainActivity extends AppCompatActivity
 
         try {
 
-            String url = "http://192.168.1.13:8080/MyEvents/rs/usuarios/listado-users"+ LoginActivity.cod_per;
+            String url = "http://192.168.0.101:8080/MyEvents/rs/usuarios/listado-users"+ LoginActivity.cod_per;
             clienteRest.doGet(url, null,WS_CONSULTA,true);
 
         }catch (Exception e){

@@ -73,7 +73,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
         clienteRest = new ClienteRest(this);
 
         try {
-            String url = "http://192.168.1.15:8080/MyEvents/rs/usuarios/crear-usuarios";
+            String url = "http://192.168.0.101:8080/MyEvents/rs/usuarios/crear-usuarios";
 
             Persona p = new Persona();
 
@@ -95,7 +95,6 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
         if(idSolicitud == WS_GUARDAR){
             if(!clienteRest.isCancelled()){
                 Respuesta respuesta = clienteRest.getResult(Respuesta.class);
-
                 showMensaje("Guardado " + respuesta.getMensaje());
             }
         }
