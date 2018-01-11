@@ -15,7 +15,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="35dp"
         android:layout_weight="1"
-        android:text="MyEvent"
+        android:text="MyEvents"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="30dp" />
 
