@@ -32,10 +32,37 @@
         android:id="@+id/btnListaEventos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/imageView2"
-        android:layout_marginBottom="23dp"
-        android:layout_marginStart="37dp"
-        android:layout_toEndOf="@+id/textView13"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView13"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="51dp"
         android:text="Eventos" />
+
+    <Button
+        android:id="@+id/btnLocales"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btnListaEventos"
+        android:layout_alignEnd="@+id/textView13"
+        android:layout_marginEnd="21dp"
+        android:text="Locales" />
+
+    <Button
+        android:id="@+id/btnEliminarUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btnListaEventos"
+        android:layout_below="@+id/btnListaEventos"
+        android:layout_marginTop="38dp"
+        android:text="Eliminar Usuario" />
+
+    <Button
+        android:id="@+id/btnVerPerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btnEliminarUsuario"
+        android:layout_marginStart="32dp"
+        android:layout_toEndOf="@+id/btnEliminarUsuario"
+        android:text="Ver Perfil" />
 
 </RelativeLayout>

@@ -70,7 +70,8 @@ public class ListadoEventosActivity extends AppCompatActivity implements OnTaskC
         try {
 
             String url1 = "http://192.168.1.15:8080/MyEvents/rs/categoria/listado-categorias";
-            clienteRest.doGet(url1, null,WS_CONSULTA,true);
+            String url2 = "http://192.168.1.13:8080/MyEvents/rs/eventos/listado-eventos";
+            clienteRest.doGet(url2, null,WS_CONSULTA,true);
 
         }catch (Exception e){
             showMensaje("Error Consulta");
@@ -84,7 +85,7 @@ public class ListadoEventosActivity extends AppCompatActivity implements OnTaskC
 
         try {
 
-            String url2 = "http://192.168.1.15:8080/MyEvents/rs/eventos/listado-categoria-eventos?id_categoria=1";
+            String url2 = "http://192.168.1.15:8080/MyEvents/rs/eventos/listado-categoria-eventos?id_categoria=";
             clienteRest.doGet(url2, null,WS_CONSULTA,true);
             //clienteRest.doGet(url2, null,WS_CONSULTA,true);
         }catch (Exception e){
