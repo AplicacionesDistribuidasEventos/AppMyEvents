@@ -6,11 +6,20 @@ package com.example.edwin.appmyevents.interfaz.Modelo;
 
 public class Persona {
 
+    private int id;
     private String nombre;
     private String apellido;
     private String cedula;
     private String correo;
     private String contrasenia;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNombre() {
         return nombre;
@@ -55,7 +64,8 @@ public class Persona {
     @Override
     public String toString() {
         return "Persona{" +
-                "nombre='" + nombre + '\'' +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
                 ", cedula='" + cedula + '\'' +
                 ", correo='" + correo + '\'' +

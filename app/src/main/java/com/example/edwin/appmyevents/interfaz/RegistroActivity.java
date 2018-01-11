@@ -69,7 +69,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
                 }
                 break;
             case R.id.btnRegresar2:
-                Intent intent = new Intent(this,MainActivity.class);
+                Intent intent = new Intent(this,Ingreso.class);
                 startActivity(intent);
                 break;
             default:
@@ -85,7 +85,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
         clienteRest = new ClienteRest(this);
 
         try {
-            String url = "http://172.16.214.15:8080/MyEvents/rs/usuarios/crear-usuarios";
+            String url = "http://192.168.1.15:8080/MyEvents/rs/usuarios/crear-usuarios";
 
             Persona p = new Persona();
 
