@@ -61,6 +61,7 @@
         android:layout_alignStart="@+id/textView9"
         android:layout_below="@+id/textView9"
         android:layout_marginTop="59dp"
+        android:textSize="15dp"
         android:text="Contrasenia:" />
 
     <Button
