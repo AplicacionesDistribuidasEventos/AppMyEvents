@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.edwin.appmyevents.interfaz.SplashScreen"
-    android:background="@drawable/fondologin">
+    android:background="@drawable/fomision_vision">
 
     <TextView
         android:id="@+id/textView12"
@@ -17,7 +17,8 @@
         android:layout_weight="1"
         android:text="MyEvents"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="30dp" />
+        android:textSize="35dp"
+        android:textStyle="italic"/>
 
     <ProgressBar
         android:id="@+id/progressBar"

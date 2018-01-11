@@ -7,6 +7,30 @@
     android:background="@drawable/fondologin"
     tools:context="com.example.edwin.appmyevents.interfaz.RegistroActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_above="@+id/txtNombre"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#db898d"
+        android:theme="@style/AppTheme"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="89dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/btnIngresar"
+        android:drawableLeft="@drawable/registrar"
+        android:text="Registrate"
+        android:textSize="25dp"
+        android:textColor="#fcfbfb"
+        android:textStyle="bold|italic" />
 
     <TextView
         android:id="@+id/textView3"
@@ -15,7 +39,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="23dp"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="66dp"
         android:text="Nombre:" />
 
     <TextView
@@ -33,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/textView6"
         android:layout_below="@+id/textView6"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="38dp"
         android:text="Cedula:" />
 
     <TextView
@@ -42,7 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/textView7"
         android:layout_below="@+id/textView7"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="45dp"
         android:text="Telefono:" />
 
     <TextView
@@ -73,6 +97,7 @@
         android:layout_marginBottom="28dp"
         android:layout_toEndOf="@+id/textView9"
         android:text="Registrarse"
+        android:textColor="#ffffff"
         style="?android:attr/buttonBarStyle"/>
 
     <Button
@@ -84,24 +109,30 @@
         android:layout_marginStart="48dp"
         android:layout_toEndOf="@+id/btnRegistro"
         android:text="Regresar"
+        android:textColor="#ffffff"
         style="?android:attr/buttonBarStyle"/>
 
     <EditText
         android:id="@+id/txtNombre"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView3"
         android:layout_alignBottom="@+id/textView3"
-        android:layout_alignStart="@+id/txtApellido"
+        android:layout_alignEnd="@+id/btnRegresar2"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:hint="Ingrese su nombre"
+        android:inputType="textPersonName"
+        android:textStyle="italic" />
 
     <EditText
         android:id="@+id/txtApellido"
         android:layout_width="200dp"
         android:layout_height="40dp"
+        android:layout_alignStart="@+id/txtPassword"
         android:layout_alignTop="@+id/textView6"
-        android:layout_toEndOf="@+id/textView10"
         android:ems="10"
+        android:hint="Ingrese su Apellido"
+        android:textStyle="italic"
         android:inputType="textPersonName" />
 
     <EditText
@@ -110,20 +141,23 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView10"
         android:layout_alignBottom="@+id/textView10"
-        android:layout_marginStart="30dp"
         android:layout_toEndOf="@+id/textView10"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:hint="Ingrese su contrasenia"
+        android:textStyle="italic"/>
 
     <EditText
         android:id="@+id/txtCorreo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/txtTelefono"
-        android:layout_below="@+id/textView8"
-        android:layout_marginTop="29dp"
+        android:layout_alignStart="@+id/txtPassword"
+        android:layout_below="@+id/txtTelefono"
+        android:layout_marginTop="41dp"
         android:ems="10"
-        android:inputType="textEmailAddress" />
+        android:hint="Ingrese su correo"
+        android:inputType="textEmailAddress"
+        android:textStyle="italic" />
 
     <EditText
         android:id="@+id/txtCedula"
@@ -132,7 +166,9 @@
         android:layout_alignStart="@+id/txtApellido"
         android:layout_alignTop="@+id/textView7"
         android:ems="10"
-        android:inputType="number" />
+        android:hint="Ingrese su cedula"
+        android:inputType="number"
+        android:textStyle="italic" />
 
     <EditText
         android:id="@+id/txtTelefono"
@@ -141,7 +177,9 @@
         android:layout_alignStart="@+id/txtCedula"
         android:layout_alignTop="@+id/textView8"
         android:ems="10"
-        android:inputType="number" />
+        android:inputType="number"
+        android:hint="Ingrese numero de telefono"
+        android:textStyle="italic"/>
 
 
 </RelativeLayout>
