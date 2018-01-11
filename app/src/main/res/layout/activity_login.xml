@@ -51,9 +51,9 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/btnIngresar"
         android:layout_below="@+id/textView2"
-        android:textStyle="bold"
         android:layout_marginTop="59dp"
-        android:text="Correo: " />
+        android:text="Correo: "
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView5"

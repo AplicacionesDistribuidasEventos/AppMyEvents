@@ -6,8 +6,17 @@ package com.example.edwin.appmyevents.interfaz.Modelo;
 
 public class Login {
 
+    private int id;
     private String correo;
     private String contrasenia;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getCorreo() {
         return correo;
@@ -28,7 +37,8 @@ public class Login {
     @Override
     public String toString() {
         return "Login{" +
-                "correo='" + correo + '\'' +
+                "id=" + id +
+                ", correo='" + correo + '\'' +
                 ", contrasenia='" + contrasenia + '\'' +
                 '}';
     }
