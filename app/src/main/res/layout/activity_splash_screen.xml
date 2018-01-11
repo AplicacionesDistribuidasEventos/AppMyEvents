@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.edwin.appmyevents.interfaz.SplashScreen"
-    android:background="#FFCDA2">
+    android:background="@drawable/fondologin">
 
     <TextView
         android:id="@+id/textView12"

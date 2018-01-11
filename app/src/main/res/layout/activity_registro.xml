@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondologin"
     tools:context="com.example.edwin.appmyevents.interfaz.RegistroActivity">
 
 
@@ -60,25 +61,30 @@
         android:layout_alignStart="@+id/textView9"
         android:layout_below="@+id/textView9"
         android:layout_marginTop="59dp"
+        android:textSize="15dp"
         android:text="Contrasenia:" />
 
     <Button
+        android:drawableLeft="@drawable/registrar"
         android:id="@+id/btnRegistro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="28dp"
         android:layout_toEndOf="@+id/textView9"
-        android:text="Registrarse" />
+        android:text="Registrarse"
+        style="?android:attr/buttonBarStyle"/>
 
     <Button
+        android:drawableLeft="@drawable/regresar"
         android:id="@+id/btnRegresar2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/btnRegistro"
         android:layout_marginStart="48dp"
         android:layout_toEndOf="@+id/btnRegistro"
-        android:text="Regresar" />
+        android:text="Regresar"
+        style="?android:attr/buttonBarStyle"/>
 
     <EditText
         android:id="@+id/txtNombre"
