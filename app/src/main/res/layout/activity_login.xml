@@ -7,6 +7,15 @@
     android:background="@drawable/fondologin"
     tools:context="com.example.edwin.appmyevents.interfaz.LoginActivity" >
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#db898d"
+        android:theme="@style/AppTheme"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     <Button
         android:drawableLeft="@drawable/login"
@@ -38,21 +47,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:textSize="15dp"
-        android:layout_alignStart="@+id/btnIngresar"
-        android:textStyle="bold"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="41dp"
-        android:text="Login" />
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/btnIngresar"
+        android:drawableLeft="@drawable/iconologin"
+        android:text="Login"
+        android:textSize="25dp"
+        android:textColor="#fcfbfb"
+        android:textStyle="bold|italic" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/btnIngresar"
-        android:layout_below="@+id/textView2"
-        android:layout_marginTop="59dp"
-        android:text="Correo: "
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="50dp"
+        android:text="Correo:"
         android:textStyle="bold" />
 
     <TextView
@@ -63,7 +74,7 @@
         android:layout_below="@+id/textView4"
         android:textStyle="bold"
         android:layout_marginTop="93dp"
-        android:text="Password:" />
+        android:text="Password:"/>
 
     <EditText
         android:id="@+id/txtPasswordLogin"
@@ -73,7 +84,10 @@
         android:layout_below="@+id/textView5"
         android:layout_marginTop="18dp"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:hint="Ingrese su contrasenia"
+        android:textStyle="italic"
+        android:singleLine="true" />
 
     <EditText
         android:id="@+id/txtCorreoLogin"
@@ -83,5 +97,8 @@
         android:layout_below="@+id/textView4"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:hint="Ingrese su correo"
+        android:textStyle="italic"
+        android:singleLine="true"/>
 </RelativeLayout>

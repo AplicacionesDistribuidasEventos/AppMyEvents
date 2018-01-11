@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fomision_vision"
-
     tools:context="com.example.edwin.appmyevents.interfaz.AyudaActivity">
+
 
     <ImageView
         android:id="@+id/imageView3"
@@ -18,16 +18,18 @@
         app:srcCompat="@drawable/mision_vision" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:drawableLeft="@drawable/regresar"
         android:id="@+id/btnRegresarAyuda"
-        android:drawablePadding="8dp"
-        android:textColor="@android:color/holo_red_dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
-        android:backgroundTint="#ef9a9a"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="18dp"
+        android:layout_marginStart="136dp"
         android:text="Regresar"
-        style="?android:attr/buttonBarStyle"/>
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="#f84949"
+        style="?android:attr/buttonBarStyle"
+        />
 </RelativeLayout>

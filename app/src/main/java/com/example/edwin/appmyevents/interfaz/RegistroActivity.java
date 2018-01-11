@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.edwin.appmyevents.R;
@@ -30,6 +31,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
     EditText cedula;
     EditText correo;
     EditText contrasenia;
+    //TextView txtnombre;
     //EditText contrasenia2;
 
     @Override
@@ -45,6 +47,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
         cedula = (EditText) findViewById(R.id.txtCedula);
         correo = (EditText) findViewById(R.id.txtCorreo);
         contrasenia = (EditText) findViewById(R.id.txtPassword);
+        //txtnombre = (TextView) findViewById(R.id.txtNombre):
         //contrasenia2 = (EditText) findViewById(R.id.txtPassword2);
 
         Button btnRegistro = (Button) findViewById(R.id.btnRegistro);
@@ -56,7 +59,14 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btnRegistro:
-                guardaPersona();
+                if(nombre.getText().toString().isEmpty()|| apellido.getText().toString().isEmpty()||cedula.getText().toString().isEmpty()||correo.getText().toString().isEmpty()||contrasenia.getText().toString().isEmpty())
+
+                {
+                    showMensaje("por favor llenar todos los campos");
+                }
+                else {
+                    guardaPersona();
+                }
                 break;
             case R.id.btnRegresar2:
                 Intent intent = new Intent(this,Ingreso.class);
@@ -66,6 +76,8 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
                 break;
 
         }
+
+
 
     }
 

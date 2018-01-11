@@ -20,7 +20,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private ClienteRest clienteRest;
     private int WS_INGRESA = 1;
     private Login login = new Login();
+
+    EditText correlogin;
+    EditText passwordlogin;
+
     public static int cod_per;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +37,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         Button btnLogin = (Button) findViewById(R.id.btnIngresar);
         btnLogin.setOnClickListener(this);
+        correlogin = (EditText) findViewById(R.id.txtCorreoLogin);
+        passwordlogin = (EditText) findViewById(R.id.txtPasswordLogin);
 
     }
 
@@ -39,7 +46,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btnIngresar:
-                loginUsuario();
+                if (correlogin.getText().toString().isEmpty()|| passwordlogin.getText().toString().isEmpty())
+            {
+                showMensaje("por favor llenar todos los campos");
+            }
+            else {
+                    loginUsuario();
+                }
                 break;
             case R.id.btnRegresar:
                 Intent intent = new Intent(this,Ingreso.class);
