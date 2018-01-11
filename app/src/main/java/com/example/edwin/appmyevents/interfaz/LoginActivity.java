@@ -6,13 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.edwin.appmyevents.R;
 import com.example.edwin.appmyevents.interfaz.Modelo.Login;
-import com.example.edwin.appmyevents.interfaz.Modelo.Persona;
-import com.example.edwin.appmyevents.interfaz.Modelo.Respuesta;
 import com.example.edwin.appmyevents.interfaz.Utilidades.ClienteRest;
 import com.example.edwin.appmyevents.interfaz.Utilidades.OnTaskCompleted;
 
@@ -44,7 +41,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 loginUsuario();
                 break;
             case R.id.btnRegresar:
-                Intent intent = new Intent(this,MainActivity.class);
+                Intent intent = new Intent(this,Ingreso.class);
                 startActivity(intent);
                 break;
             default:
@@ -58,7 +55,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         clienteRest = new ClienteRest(this);
 
         try {
-            String url = "http://172.16.214.15:8080/MyEvents/rs/usuarios/login";
+            String url = "http://192.168.1.15:8080/MyEvents/rs/usuarios/login";
 
             //Persona p = new Persona();
             Login l = new Login();
@@ -102,9 +99,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             //txtMens.setText("USUARIO INCORRECTO");
             if ((cadenaNombre1.equals(cadenaNombre2))  && (cadenaPassword1.equals(cadenaPassword2)))
             {
+                showMensaje("Ingreso Exitoso !!! ");
                 System.out.println("USUARIO EXISTE");
                 Intent i2 = new Intent(this,MainActivity.class);
                 startActivity(i2);
+
             }
 
             System.out.println(i);

@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".interfaz.MainActivity"
+            android:name=".interfaz.Ingreso"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -33,7 +33,10 @@
         <activity android:name=".interfaz.RegistroActivity" />
         <activity android:name=".interfaz.CategoriaActivity" />
         <activity android:name=".interfaz.ReservaActivity" />
-        <activity android:name=".interfaz.AyudaActivity"></activity>
+        <activity android:name=".interfaz.AyudaActivity" />
+        <activity android:name=".interfaz.MainActivity" />
+        <activity android:name=".interfaz.ListadoEventosActivity" />
+        <activity android:name=".interfaz.MuestraEvento"></activity>
     </application>
 
 </manifest>
