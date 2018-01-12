@@ -38,7 +38,8 @@
         <activity android:name=".interfaz.MainActivity" />
         <activity android:name=".interfaz.ListadoEventosActivity" />
         <activity android:name=".interfaz.MuestraEvento" />
-        <activity android:name=".interfaz.ListadoLocalesActivity"></activity>
+        <activity android:name=".interfaz.ListadoLocalesActivity" />
+        <activity android:name=".interfaz.EditUsuario"></activity>
     </application>
 
 </manifest>

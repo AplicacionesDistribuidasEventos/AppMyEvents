@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.edwin.appmyevents.interfaz.EditUsuario">
+
+    <Button
+        android:id="@+id/btnEditaUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/txtCorreoEdit"
+        android:layout_marginBottom="72dp"
+        android:layout_marginStart="46dp"
+        android:text="Editar" />
+
+    <EditText
+        android:id="@+id/txtNombreEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="77dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/txtApellidoEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/txtNombreEdit"
+        android:layout_below="@+id/txtNombreEdit"
+        android:layout_marginTop="42dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/txtCorreoEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnEditaUsuario"
+        android:layout_alignStart="@+id/txtApellidoEdit"
+        android:layout_marginBottom="33dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+</RelativeLayout>
