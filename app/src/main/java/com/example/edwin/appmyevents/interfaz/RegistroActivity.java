@@ -3,21 +3,18 @@ package com.example.edwin.appmyevents.interfaz;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.edwin.appmyevents.R;
-import com.example.edwin.appmyevents.interfaz.Modelo.Categoria;
+import com.example.edwin.appmyevents.interfaz.Modelo.Login;
 import com.example.edwin.appmyevents.interfaz.Modelo.Persona;
 import com.example.edwin.appmyevents.interfaz.Modelo.Respuesta;
 import com.example.edwin.appmyevents.interfaz.Utilidades.ClienteRest;
 import com.example.edwin.appmyevents.interfaz.Utilidades.OnTaskCompleted;
 
-import java.util.List;
 
 
 public class RegistroActivity extends AppCompatActivity implements View.OnClickListener, OnTaskCompleted {
@@ -31,7 +28,6 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
     EditText cedula;
     EditText correo;
     EditText contrasenia;
-    //TextView txtnombre;
     //EditText contrasenia2;
 
     @Override
@@ -66,7 +62,10 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
                 }
                 else {
                     guardaPersona();
+                    Intent intent1 = new Intent(this,LoginActivity.class);
+                    startActivity(intent1);
                 }
+
                 break;
             case R.id.btnRegresar2:
                 Intent intent = new Intent(this,Ingreso.class);
@@ -78,14 +77,13 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
         }
 
 
-
     }
 
     private void guardaPersona() {
         clienteRest = new ClienteRest(this);
 
         try {
-            String url = "http://192.168.0.101:8080/MyEvents/rs/usuarios/crear-usuarios";
+            String url = "http://192.168.0.102:8080/MyEvents/rs/usuarios/crear-usuarios";
 
             Persona p = new Persona();
 
@@ -96,6 +94,8 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
             p.setContrasenia(((EditText)findViewById(R.id.txtPassword)).getText().toString());
 
             clienteRest.doPost(url,p,WS_GUARDAR,true);
+
+
         }catch (Exception e){
             showMensaje("Error Consulta");
             e.printStackTrace();
@@ -107,7 +107,9 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
         if(idSolicitud == WS_GUARDAR){
             if(!clienteRest.isCancelled()){
                 Respuesta respuesta = clienteRest.getResult(Respuesta.class);
-                showMensaje("Guardado " + respuesta.getMensaje());
+                //showMensaje("Guardado " + respuesta.getMensaje());
+                showMensaje("Usurio Creado Exitosamente ");
+
             }
         }
     }
