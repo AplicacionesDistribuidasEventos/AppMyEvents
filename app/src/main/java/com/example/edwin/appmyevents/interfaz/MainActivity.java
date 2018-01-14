@@ -37,16 +37,6 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -111,17 +101,19 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_inicio) {
-            // Handle the camera action
-        } else if (id == R.id.nav_login) {
+            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+            startActivity(intent);
 
-            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        } else if (id == R.id.nav_perfil) {
+
+            Intent intent = new Intent(MainActivity.this, EditUsuario.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_categoria) {
             Intent intent = new Intent(MainActivity.this, CategoriaActivity.class);
             startActivity(intent);
 
-        } else if (id == R.id.nav_elimina_usuario) {
+        } else if (id == R.id.nav_lista_locales) {
 
             Intent intent = new Intent(MainActivity.this,ListadoLocalesActivity.class);
             startActivity(intent);

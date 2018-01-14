@@ -20,7 +20,7 @@ public class Actualizar implements OnTaskCompleted{
         clienteRest = new ClienteRest(this);
         System.out.println("NOMBRE NUEVOOOOOOO: "+nombre);
         try {
-            String url = "http://192.168.0.101:8080/MyEvents/rs/usuarios/actualizar-usuario?nombre="+nombre+"&apellido="+apellido+"&correo="+correo+"&id="+ LoginActivity.cod_per;
+            String url = "http://192.168.0.102:8080/MyEvents/rs/usuarios/actualizar-usuario?nombre="+nombre+"&apellido="+apellido+"&correo="+correo+"&id="+ LoginActivity.cod_per;
             clienteRest.doGet(url,null,WS_CONSULTA,true);
         }catch (Exception e){
             e.printStackTrace();

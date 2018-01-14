@@ -8,10 +8,19 @@ import java.util.Date;
 
 public class Evento {
 
+    private int codigo;
     private String nombre;
     private String descripcion;
     private String costo;
-    private Date fechaEvento;
+    private String fechaEvento;
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
 
     public String getNombre() {
         return nombre;
@@ -37,21 +46,22 @@ public class Evento {
         this.costo = costo;
     }
 
-    public Date getFechaEvento() {
+    public String getFechaEvento() {
         return fechaEvento;
     }
 
-    public void setFechaEvento(Date fechaEvento) {
+    public void setFechaEvento(String fechaEvento) {
         this.fechaEvento = fechaEvento;
     }
 
     @Override
     public String toString() {
         return "Evento{" +
-                "nombre='" + nombre + '\'' +
+                "codigo=" + codigo +
+                ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", costo='" + costo + '\'' +
-                ", fechaEvento=" + fechaEvento +
+                ", fechaEvento='" + fechaEvento + '\'' +
                 '}';
     }
 }

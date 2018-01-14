@@ -59,6 +59,7 @@ public class EditUsuario extends AppCompatActivity implements OnTaskCompleted, V
                 Actualizar ac = new Actualizar();
                 setearValores();
                 ac.actualizarUsuario(nombreN, apellidoN, correoN);
+
                 Intent intent = new Intent(this,MainActivity.class);
                 startActivity(intent);
 
@@ -84,7 +85,7 @@ public class EditUsuario extends AppCompatActivity implements OnTaskCompleted, V
         clienteRest = new ClienteRest(this);
         System.out.println("ENTRA EDITAR USUARIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
         try {
-            String url = "http://192.168.0.101:8080/MyEvents/rs/usuarios/informacion-usuario?id="+LoginActivity.cod_per;
+            String url = "http://192.168.0.102:8080/MyEvents/rs/usuarios/informacion-usuario?id="+LoginActivity.cod_per;
             clienteRest.doGet(url,null,WS_CONSULTA,true);
         }catch (Exception e){
             e.printStackTrace();
@@ -99,11 +100,9 @@ public class EditUsuario extends AppCompatActivity implements OnTaskCompleted, V
                 p = clienteRest.getResult(Persona.class);
                 System.out.println("PERSONAAAAAAAAAAAA: "+p);
                 String n = p.getNombre().toString();
-    txtnombreEdit.setText(n);
-    txtApellidoEdit.setText(p.getApellido());
-    txtCorreoEdit.setText(p.getCorreo());
-
-
+                txtnombreEdit.setText(n);
+                txtApellidoEdit.setText(p.getApellido());
+                txtCorreoEdit.setText(p.getCorreo());
             }
         }
 

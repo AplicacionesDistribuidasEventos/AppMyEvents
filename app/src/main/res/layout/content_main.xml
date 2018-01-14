@@ -42,9 +42,8 @@
         android:id="@+id/btnLocales"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/btnListaEventos"
+        android:layout_above="@+id/btnEliminarUsuario"
         android:layout_alignEnd="@+id/textView13"
-        android:layout_marginEnd="21dp"
         android:text="Locales" />
 
     <Button
@@ -60,10 +59,8 @@
         android:id="@+id/btnVerPerfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="57dp"
-        android:layout_toEndOf="@+id/btnEliminarUsuario"
+        android:layout_alignStart="@+id/btnLocales"
+        android:layout_below="@+id/btnEliminarUsuario"
         android:text="Ver Perfil" />
 
 </RelativeLayout>

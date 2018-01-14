@@ -9,7 +9,7 @@
             android:icon="@drawable/inicio"
             android:title="Inicio" />
         <item
-            android:id="@+id/nav_login"
+            android:id="@+id/nav_perfil"
             android:icon="@drawable/usuario"
             android:title="Mi Perfil" />
         <item
@@ -17,9 +17,9 @@
             android:icon="@drawable/categoria"
             android:title="Categorias" />
         <item
-            android:id="@+id/nav_elimina_usuario"
+            android:id="@+id/nav_lista_locales"
             android:icon="@drawable/favorito"
-            android:title="Eliminar Cuenta" />
+            android:title="Locales" />
     </group>
 
     <item android:title="Comunicate">

@@ -8,6 +8,7 @@ public class Categoria {
 
     private String nombre;
     private String descipcion;
+    private int id;
 
     public String getNombre() {
         return nombre;
@@ -31,5 +32,13 @@ public class Categoria {
                 "nombre='" + nombre + '\'' +
                 ", descipcion='" + descipcion + '\'' +
                 '}';
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
