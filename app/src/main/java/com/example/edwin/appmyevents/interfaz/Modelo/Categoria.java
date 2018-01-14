@@ -26,19 +26,20 @@ public class Categoria {
         this.descipcion = descipcion;
     }
 
-    @Override
-    public String toString() {
-        return "CategoriaActivity{" +
-                "nombre='" + nombre + '\'' +
-                ", descipcion='" + descipcion + '\'' +
-                '}';
-    }
-
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Categoria{" +
+                "nombre='" + nombre + '\'' +
+                ", descipcion='" + descipcion + '\'' +
+                ", id=" + id +
+                '}';
     }
 }
