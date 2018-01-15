@@ -10,11 +10,20 @@
         android:id="@+id/btnEditaUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_alignBaseline="@+id/btnCancelar"
+        android:layout_alignBottom="@+id/btnCancelar"
         android:layout_alignStart="@+id/txtCorreoEdit"
-        android:layout_marginBottom="72dp"
-        android:layout_marginStart="46dp"
-        android:text="Editar" />
+        android:text="Actualizar" />
+
+    <Button
+        android:id="@+id/btnCancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/txtCorreoEdit"
+        android:layout_marginEnd="73dp"
+        android:layout_marginTop="58dp"
+        android:text="Cancelar" />
 
     <EditText
         android:id="@+id/txtNombreEdit"
@@ -41,9 +50,9 @@
         android:id="@+id/txtCorreoEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btnEditaUsuario"
         android:layout_alignStart="@+id/txtApellidoEdit"
-        android:layout_marginBottom="33dp"
+        android:layout_below="@+id/txtApellidoEdit"
+        android:layout_marginTop="33dp"
         android:ems="10"
         android:inputType="textPersonName" />
 
