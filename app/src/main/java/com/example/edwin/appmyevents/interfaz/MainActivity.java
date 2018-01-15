@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity
 
         ImageView imgEventos = findViewById(R.id.imgCategoriaEventos);
         imgEventos.setOnClickListener(this);
-        //eliminarUsuario();
     }
 
     @Override
