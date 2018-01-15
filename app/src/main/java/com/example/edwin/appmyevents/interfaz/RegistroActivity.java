@@ -83,7 +83,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
         clienteRest = new ClienteRest(this);
 
         try {
-            String url = "http://192.168.0.102:8080/MyEvents/rs/usuarios/crear-usuarios";
+            String url = "http://"+LoginActivity.dir_ip+":8080/MyEvents/rs/usuarios/crear-usuarios";
 
             Persona p = new Persona();
 

@@ -27,14 +27,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public static int cod_per;
     SharedPreferences prefs ;
     Context contex;
+    /**
+     * DIRECCION IP QUE SE VA A ESTABLECER EN TODOS LOS WS
+     * */
+    public static String dir_ip = "192.168.1.3";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-        Button btnRegre = (Button) findViewById(R.id.btnRegresar);
-        btnRegre.setOnClickListener(this);
 
         Button btnLogin = (Button) findViewById(R.id.btnIngresar);
         btnLogin.setOnClickListener(this);
@@ -56,10 +57,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     loginUsuario();
                 }
                 break;
-            case R.id.btnRegresar:
-                Intent intent = new Intent(this,Ingreso.class);
-                startActivity(intent);
-                break;
+
             default:
                 break;
 
@@ -71,7 +69,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         clienteRest = new ClienteRest(this);
 
         try {
-            String url = "http://192.168.0.102:8080/MyEvents/rs/usuarios/login";
+            String url = "http://"+dir_ip+":8080/MyEvents/rs/usuarios/login";
 
             Login l = new Login();
 
@@ -83,9 +81,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
             e.printStackTrace();
             showMensaje("Error Logeo");
+/*
             SharedPreferences.Editor editor = prefs.edit();
             editor.putBoolean("login", false);
             editor.commit();
+*/
         }
 
     }

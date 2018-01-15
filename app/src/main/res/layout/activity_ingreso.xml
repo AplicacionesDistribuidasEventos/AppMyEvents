@@ -4,42 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondologin"
     tools:context="com.example.edwin.appmyevents.interfaz.Ingreso">
 
     <Button
         android:id="@+id/btnLoginPrincipal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/btnRegistroPrincipal"
-        android:layout_alignEnd="@+id/imageView4"
-        android:layout_marginBottom="94dp"
-        android:layout_marginEnd="46dp"
-        android:text="Ingreso" />
+        android:layout_below="@+id/imageView4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/round_button_verde"
+        android:drawableLeft="@drawable/iconlogin"
+        android:paddingEnd="20dp"
+        android:paddingStart="20dp"
+        android:text="Ingresar"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnRegistroPrincipal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/btnLoginPrincipal"
-        android:layout_marginBottom="87dp"
-        android:text="Registro" />
+        android:layout_alignTop="@+id/btnLoginPrincipal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="124dp"
+        android:background="@drawable/round_button_azul"
+        android:drawableLeft="@drawable/iconcrearusuario"
+        android:gravity="center_vertical|center_horizontal"
+        android:paddingEnd="20dp"
+        android:paddingStart="20dp"
+        android:text="Registrarme"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_above="@+id/btnLoginPrincipal"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="31dp"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/btnRegistroPrincipal"
+        android:layout_marginTop="118dp"
         app:srcCompat="@mipmap/logo" />
 
-    <Button
-        android:id="@+id/btnImagenes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/btnRegistroPrincipal"
-        android:layout_marginEnd="19dp"
-        android:layout_toStartOf="@+id/btnRegistroPrincipal"
-        android:text="Imagenes" />
 </RelativeLayout>

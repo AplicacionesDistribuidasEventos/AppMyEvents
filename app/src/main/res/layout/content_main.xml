@@ -27,40 +27,87 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.162" />
 
+    <ImageView
+        android:id="@+id/imgVerPerfil"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_above="@+id/textView11"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="19dp"
+        app:srcCompat="@mipmap/imagenperfil" />
 
-    <Button
-        android:id="@+id/btnListaEventos"
+    <TextView
+        android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/imgVerPerfil"
+        android:layout_marginBottom="50dp"
+        android:layout_marginStart="14dp"
+        android:text="Ver Perfil"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imgEliminiarUsuario"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_above="@+id/textView12"
+        android:layout_alignStart="@+id/textView14"
+        app:srcCompat="@mipmap/imageneliminarusuario" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/imgCategoriaEventos"
+        android:layout_below="@+id/imgVerPerfil"
+        android:text="Eliminar Cuenta"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imgCategoriaEventos"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_above="@+id/textView14"
+        android:layout_alignEnd="@+id/imgEliminiarUsuario"
+        android:layout_marginEnd="23dp"
+        app:srcCompat="@mipmap/imagencategorias" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView15"
+        android:layout_alignBottom="@+id/textView15"
+        android:layout_alignStart="@+id/textView13"
+        android:text="Eventos"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imgLocales"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignEnd="@+id/textView15"
         android:layout_below="@+id/textView13"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="51dp"
-        android:text="Eventos" />
+        android:layout_marginTop="49dp"
+        app:srcCompat="@mipmap/imagenlocal" />
 
-    <Button
-        android:id="@+id/btnLocales"
+    <TextView
+        android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btnEliminarUsuario"
-        android:layout_alignEnd="@+id/textView13"
-        android:text="Locales" />
+        android:layout_below="@+id/imgLocales"
+        android:layout_toEndOf="@+id/imgEliminiarUsuario"
+        android:text="Reservar locales"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btnEliminarUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/btnListaEventos"
-        android:layout_below="@+id/btnListaEventos"
-        android:layout_marginTop="38dp"
-        android:text="Eliminar Usuario" />
-
-    <Button
-        android:id="@+id/btnVerPerfil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/btnLocales"
-        android:layout_below="@+id/btnEliminarUsuario"
-        android:text="Ver Perfil" />
 
 </RelativeLayout>

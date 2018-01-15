@@ -83,9 +83,8 @@ public class EditUsuario extends AppCompatActivity implements OnTaskCompleted, V
 
     private void editarUsuario() {
         clienteRest = new ClienteRest(this);
-        System.out.println("ENTRA EDITAR USUARIOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
         try {
-            String url = "http://192.168.0.102:8080/MyEvents/rs/usuarios/informacion-usuario?id="+LoginActivity.cod_per;
+            String url = "http://"+LoginActivity.dir_ip+":8080/MyEvents/rs/usuarios/informacion-usuario?id="+LoginActivity.cod_per;
             clienteRest.doGet(url,null,WS_CONSULTA,true);
         }catch (Exception e){
             e.printStackTrace();

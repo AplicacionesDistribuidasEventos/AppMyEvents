@@ -27,11 +27,12 @@ public class Ingreso extends AppCompatActivity implements View.OnClickListener{
 
         Button btnRegistroPrincipal = (Button) findViewById(R.id.btnRegistroPrincipal);
         btnRegistroPrincipal.setOnClickListener(this);
-
+/*
         Button btnImagen = (Button) findViewById(R.id.btnImagenes);
         btnImagen.setOnClickListener(this);
-
+*/
         ////inicio
+/*
         contex= this;
         prefs=  getSharedPreferences("eventos", Context.MODE_PRIVATE);
         boolean isLogin= prefs.getBoolean("login", false);
@@ -39,6 +40,7 @@ public class Ingreso extends AppCompatActivity implements View.OnClickListener{
         if(isLogin){
             startActivity(new Intent(contex,MainActivity.class));
         }
+*/
         ////akiiii
 
     }
@@ -55,10 +57,12 @@ public class Ingreso extends AppCompatActivity implements View.OnClickListener{
                 Intent intent2 = new Intent(this,RegistroActivity.class);
                 startActivity(intent2);
                 break;
+/*
             case R.id.btnImagenes:
                 Intent intent3 = new Intent(this,ListadoImagen.class);
                 startActivity(intent3);
                 break;
+*/
             default:
                 break;
 

@@ -24,7 +24,8 @@ public class Confirmar_Asistencia implements OnTaskCompleted{
     private void definirEstado(int id_evento, String estado){
         clienteRest = new ClienteRest(this);
         try {
-            String url = "http://192.168.0.102:8080/MyEvents/rs/eventos/establecer-asistencia?estado="+estado+"&cod="+id_evento+"&id_user="+ LoginActivity.cod_per;
+            System.out.println("CODIGO PERSONA:  "+LoginActivity.cod_per);
+            String url = "http://"+LoginActivity.dir_ip+":8080/MyEvents/rs/eventos/establecer-asistencia?estado="+estado+"&cod="+id_evento+"&id_user="+ LoginActivity.cod_per;
             clienteRest.doGet(url, null,WS_CONSULTA,true);
         }catch (Exception e) {
             e.printStackTrace();
