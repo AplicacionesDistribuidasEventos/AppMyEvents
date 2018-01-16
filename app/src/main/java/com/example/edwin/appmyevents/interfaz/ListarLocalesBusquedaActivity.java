@@ -55,7 +55,7 @@ public class ListarLocalesBusquedaActivity extends AppCompatActivity implements 
         if (idSolicitud == WS_CONSULTA) {
             if (!clienteRest.isCancelled()) {
                 ArrayList<Local> locales = (ArrayList<Local>) clienteRest.getResultList(Local.class);
-                LocalBusquedaAdapter localBusquedaAdapter = new LocalBusquedaAdapter(locales, context);
+                LocalBusquedaAdapter localBusquedaAdapter = new LocalBusquedaAdapter(locales, this);
                 listViewLocales.setAdapter(localBusquedaAdapter);
             }
         }
