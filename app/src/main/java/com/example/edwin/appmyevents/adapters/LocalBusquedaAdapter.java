@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.example.edwin.appmyevents.R;
 import com.example.edwin.appmyevents.interfaz.Controlador.Confirmar_Asistencia;
+import com.example.edwin.appmyevents.interfaz.Controlador.ReservaLocal;
+import com.example.edwin.appmyevents.interfaz.LocalesActivity;
 import com.example.edwin.appmyevents.interfaz.Modelo.Evento;
 import com.example.edwin.appmyevents.interfaz.Modelo.Local;
 import com.squareup.picasso.Picasso;
@@ -24,7 +26,8 @@ public class LocalBusquedaAdapter extends BaseAdapter {
 
     public class ViewHolder {
         TextView tvnombre, tvDescripcion, tvCosto, tvcapacidad;
-//        ImageView tvfoto;
+        ImageView tvfoto;
+        Button btnreserva;
     }
 
     public List<Local> listaLocal =new ArrayList<Local>();
@@ -69,7 +72,8 @@ public class LocalBusquedaAdapter extends BaseAdapter {
             viewHolder.tvDescripcion =rowView.findViewById(R.id.descripcion);
             viewHolder.tvcapacidad = rowView.findViewById(R.id.capacidad);
             viewHolder.tvCosto = rowView.findViewById(R.id.costo);
-//            viewHolder.tvfoto = rowView.findViewById(R.id.fotolocal);
+            viewHolder.tvfoto = rowView.findViewById(R.id.fotolocal);
+            viewHolder.btnreserva = rowView.findViewById(R.id.reserva);
             System.out.println("Siiiiiiiiiiiiiiiiiiiii33333333333333333333333333");
             rowView.setTag(viewHolder);
 
@@ -84,8 +88,18 @@ public class LocalBusquedaAdapter extends BaseAdapter {
         viewHolder.tvcapacidad.setText(local.getCapacidad());
         viewHolder.tvCosto.setText(local.getCosto()+ " USD ");
 
-//        System.out.println("http://192.168.1.12/MyEvents/"+local.getFotoPerfil());
-//        Picasso.with(context).load("http://192.168.1.12/MyEvents/"+local.getFotoPerfil()).into(viewHolder.tvfoto);
+        System.out.println("http://172.16.223.191/MyEvents/"+local.getFotoPerfil());
+        Picasso.with(context).load("http://172.16.223.191/MyEvents/"+local.getFotoPerfil()).into(viewHolder.tvfoto);
+
+        viewHolder.btnreserva.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Local local1 = (Local) getItem(position);
+                Toast.makeText(context,"Reserva Satisfactoria..!!!:"+local1.getCodigo(),Toast.LENGTH_SHORT).show();
+                String fecha = LocalesActivity.fec;
+                ReservaLocal res = new ReservaLocal(local1.getCodigo(), fecha);
+            }
+        });
 
         return rowView;
     }
