@@ -58,7 +58,7 @@ public class CategoriaActivity extends AppCompatActivity implements View.OnClick
 
         try {
             //String url = "http://192.168.0.102:8080/MyEvents/rs/usuarios/listado-categorias";
-            String url = "http://172.16.214.15:8080/MyEvents/rs/usuarios/listado-categorias";
+            String url = "http://192.168.1.15:8080/MyEvents/rs/categoria/listado-categorias";
             clienteRest.doGet(url, null,WS_CONSULTA,true);
         }catch (Exception e){
             showMensaje("Error Consulta");

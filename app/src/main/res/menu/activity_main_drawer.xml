@@ -17,9 +17,9 @@
             android:icon="@drawable/categoria"
             android:title="Categorias" />
         <item
-            android:id="@+id/nav_usuario"
+            android:id="@+id/nav_elimina_usuario"
             android:icon="@drawable/favorito"
-            android:title="Crear Cuenta" />
+            android:title="Eliminar Cuenta" />
     </group>
 
     <item android:title="Comunicate">

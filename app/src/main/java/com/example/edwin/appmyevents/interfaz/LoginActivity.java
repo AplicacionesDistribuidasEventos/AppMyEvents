@@ -6,13 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.edwin.appmyevents.R;
 import com.example.edwin.appmyevents.interfaz.Modelo.Login;
-import com.example.edwin.appmyevents.interfaz.Modelo.Persona;
-import com.example.edwin.appmyevents.interfaz.Modelo.Respuesta;
 import com.example.edwin.appmyevents.interfaz.Utilidades.ClienteRest;
 import com.example.edwin.appmyevents.interfaz.Utilidades.OnTaskCompleted;
 
@@ -23,8 +20,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private ClienteRest clienteRest;
     private int WS_INGRESA = 1;
     private Login login = new Login();
+
     EditText correlogin;
     EditText passwordlogin;
+
+    public static int cod_per;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +55,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 }
                 break;
             case R.id.btnRegresar:
-                Intent intent = new Intent(this,MainActivity.class);
+                Intent intent = new Intent(this,Ingreso.class);
                 startActivity(intent);
                 break;
             default:
@@ -68,9 +69,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         clienteRest = new ClienteRest(this);
 
         try {
-            String url = "http://172.16.214.15:8080/MyEvents/rs/usuarios/login";
+            String url = "http://192.168.1.13:8080/MyEvents/rs/usuarios/login";
 
-            //Persona p = new Persona();
             Login l = new Login();
 
                 l.setCorreo(((EditText) findViewById(R.id.txtCorreoLogin)).getText().toString());
@@ -104,17 +104,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             cadenaPassword1=txtPasswordL.getText().toString();
             cadenaPassword2=usuario.get(i).getContrasenia().toString();
 
-
             System.out.println("ATRAPA TEXTO "+cadenaNombre1+ "USUARIO LISTA: "+cadenaNombre2);
-            // if (txtNombre.getText().equals(usuario.get(i).getUsername())&& txtNombre.getText().equals(usuario.get(i).getPassword()))
-            //if (txtNombre.getText().toString()==((usuario.get(i).getUsername().toString())))
 
-            //txtMens.setText("USUARIO INCORRECTO");
             if ((cadenaNombre1.equals(cadenaNombre2))  && (cadenaPassword1.equals(cadenaPassword2)))
             {
+                cod_per = usuario.get(0).getId();
+                showMensaje("Ingreso Exitoso !!! ");
                 System.out.println("USUARIO EXISTE");
                 Intent i2 = new Intent(this,MainActivity.class);
                 startActivity(i2);
+
             }
 
             System.out.println(i);
