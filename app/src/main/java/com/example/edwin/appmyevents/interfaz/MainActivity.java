@@ -15,6 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.edwin.appmyevents.R;
@@ -37,16 +38,6 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -57,16 +48,17 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        Button btnListaEventos = (Button) findViewById(R.id.btnListaEventos);
-        btnListaEventos.setOnClickListener(this);
+        ImageView imgVerPerfil = findViewById(R.id.imgVerPerfil);
+        imgVerPerfil.setOnClickListener(this);
 
-        Button btnLocales = (Button) findViewById(R.id.btnLocales);
-        btnLocales.setOnClickListener(this);
+        ImageView imgEliminarUsuario = findViewById(R.id.imgEliminiarUsuario);
+        imgEliminarUsuario.setOnClickListener(this);
 
-        Button btnEliminaUsuario = (Button) findViewById(R.id.btnEliminarUsuario);
-        btnEliminaUsuario.setOnClickListener(this);
+        ImageView imgLocales = findViewById(R.id.imgLocales);
+        imgLocales.setOnClickListener(this);
 
-        //eliminarUsuario();
+        ImageView imgEventos = findViewById(R.id.imgCategoriaEventos);
+        imgEventos.setOnClickListener(this);
     }
 
     @Override
@@ -108,19 +100,12 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_inicio) {
-            // Handle the camera action
-        } else if (id == R.id.nav_login) {
-
-            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            Intent intent = new Intent(MainActivity.this, MainActivity.class);
             startActivity(intent);
 
-        } else if (id == R.id.nav_categoria) {
-            Intent intent = new Intent(MainActivity.this, CategoriaActivity.class);
-            startActivity(intent);
+        } else if (id == R.id.nav_perfil) {
 
-        } else if (id == R.id.nav_elimina_usuario) {
-
-            Intent intent = new Intent(MainActivity.this,ListadoLocalesActivity.class);
+            Intent intent = new Intent(MainActivity.this, EditUsuario.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_ayuda) {
@@ -139,15 +124,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.btnListaEventos:
-                Intent intent = new Intent(this,ListadoEventosActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.btnLocales:
-                Intent intent1 = new Intent(this,ListadoLocalesActivity.class);
-                startActivity(intent1);
-                break;
-            case R.id.btnEliminarUsuario:
+            case R.id.imgEliminiarUsuario:
                 eliminarUsuario();
                 Intent intent2 = new Intent(this, Ingreso.class);
                 startActivity(intent2);
@@ -158,21 +135,23 @@ public class MainActivity extends AppCompatActivity
 
                 Toast toast = Toast.makeText(context,text,duracion);
                 toast.show();
-
                 break;
 
-            case R.id.btnVerPerfil:
-                verUsuario();
-                Intent intent3 = new Intent(this, Ingreso.class);
-                startActivity(intent3);
-
-                Context context1 = getApplicationContext();
-                CharSequence text1 = "Usuario Eliminado";
-                int duracion1 = Toast.LENGTH_SHORT;
-
-                Toast toast1 = Toast.makeText(context1,text1,duracion1);
-                toast1.show();
+            case R.id.imgVerPerfil:
+                Intent intent4 = new Intent(this,EditUsuario.class);
+                startActivity(intent4);
                 break;
+
+            case R.id.imgCategoriaEventos:
+                Intent intent5 = new Intent(MainActivity.this, CategoriaActivity.class);
+                startActivity(intent5);
+                break;
+
+            case R.id.imgLocales:
+                Intent intent1 = new Intent(this,ListadoLocalesActivity.class);
+                startActivity(intent1);
+                break;
+
             default:
                 break;
 
@@ -187,7 +166,7 @@ public class MainActivity extends AppCompatActivity
 
         try {
 
-            String url = "http://192.168.1.13:8080/MyEvents/rs/usuarios/eliminar-usuario?id_usuario="+ LoginActivity.cod_per;
+            String url = "http://"+LoginActivity.dir_ip+":8080/MyEvents/rs/usuarios/eliminar-usuario?id_usuario="+ LoginActivity.cod_per;
             clienteRest.doGet(url, null,WS_CONSULTA,true);
 
         }catch (Exception e){
@@ -203,7 +182,7 @@ public class MainActivity extends AppCompatActivity
 
         try {
 
-            String url = "http://192.168.1.13:8080/MyEvents/rs/usuarios/listado-users"+ LoginActivity.cod_per;
+            String url = "http://"+LoginActivity.dir_ip+":8080/MyEvents/rs/usuarios/listado-users"+ LoginActivity.cod_per;
             clienteRest.doGet(url, null,WS_CONSULTA,true);
 
         }catch (Exception e){

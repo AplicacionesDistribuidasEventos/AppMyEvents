@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.edwin.appmyevents.interfaz.EditUsuario">
+
+    <Button
+        android:id="@+id/btnEditaUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnCancelar"
+        android:layout_alignBottom="@+id/btnCancelar"
+        android:layout_alignStart="@+id/txtCorreoEdit"
+        android:text="Actualizar" />
+
+    <Button
+        android:id="@+id/btnCancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/txtCorreoEdit"
+        android:layout_marginEnd="73dp"
+        android:layout_marginTop="58dp"
+        android:text="Cancelar" />
+
+    <EditText
+        android:id="@+id/txtNombreEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="77dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/txtApellidoEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/txtNombreEdit"
+        android:layout_below="@+id/txtNombreEdit"
+        android:layout_marginTop="42dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/txtCorreoEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/txtApellidoEdit"
+        android:layout_below="@+id/txtApellidoEdit"
+        android:layout_marginTop="33dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+</RelativeLayout>

@@ -1,6 +1,8 @@
 package com.example.edwin.appmyevents.interfaz;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,26 +22,27 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private ClienteRest clienteRest;
     private int WS_INGRESA = 1;
     private Login login = new Login();
-
     EditText correlogin;
     EditText passwordlogin;
-
     public static int cod_per;
-
+    SharedPreferences prefs ;
+    Context contex;
+    /**
+     * DIRECCION IP QUE SE VA A ESTABLECER EN TODOS LOS WS
+     * */
+    public static String dir_ip = "192.168.1.3";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Button btnRegre = (Button) findViewById(R.id.btnRegresar);
-        btnRegre.setOnClickListener(this);
-
         Button btnLogin = (Button) findViewById(R.id.btnIngresar);
         btnLogin.setOnClickListener(this);
         correlogin = (EditText) findViewById(R.id.txtCorreoLogin);
         passwordlogin = (EditText) findViewById(R.id.txtPasswordLogin);
-
+        contex = this;
+        prefs=  getSharedPreferences("eventos", Context.MODE_PRIVATE);
     }
 
     @Override
@@ -54,10 +57,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     loginUsuario();
                 }
                 break;
-            case R.id.btnRegresar:
-                Intent intent = new Intent(this,Ingreso.class);
-                startActivity(intent);
-                break;
+
             default:
                 break;
 
@@ -69,19 +69,23 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         clienteRest = new ClienteRest(this);
 
         try {
-            String url = "http://192.168.1.13:8080/MyEvents/rs/usuarios/login";
+            String url = "http://"+dir_ip+":8080/MyEvents/rs/usuarios/login";
 
             Login l = new Login();
 
                 l.setCorreo(((EditText) findViewById(R.id.txtCorreoLogin)).getText().toString());
                 l.setContrasenia(((EditText) findViewById(R.id.txtPasswordLogin)).getText().toString());
 
-
             clienteRest.doPost(url,l,WS_INGRESA,true);
         }catch (Exception e){
 
             e.printStackTrace();
             showMensaje("Error Logeo");
+/*
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putBoolean("login", false);
+            editor.commit();
+*/
         }
 
     }
@@ -104,13 +108,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             cadenaPassword1=txtPasswordL.getText().toString();
             cadenaPassword2=usuario.get(i).getContrasenia().toString();
 
-            System.out.println("ATRAPA TEXTO "+cadenaNombre1+ "USUARIO LISTA: "+cadenaNombre2);
-
             if ((cadenaNombre1.equals(cadenaNombre2))  && (cadenaPassword1.equals(cadenaPassword2)))
             {
                 cod_per = usuario.get(0).getId();
                 showMensaje("Ingreso Exitoso !!! ");
                 System.out.println("USUARIO EXISTE");
+
+
+                ///ling mantiene
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putBoolean("login", true);
+                editor.commit();
+                ///fin login
+
                 Intent i2 = new Intent(this,MainActivity.class);
                 startActivity(i2);
 

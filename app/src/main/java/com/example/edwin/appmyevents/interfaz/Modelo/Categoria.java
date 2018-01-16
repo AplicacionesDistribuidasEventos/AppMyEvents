@@ -8,6 +8,7 @@ public class Categoria {
 
     private String nombre;
     private String descipcion;
+    private int id;
 
     public String getNombre() {
         return nombre;
@@ -25,11 +26,20 @@ public class Categoria {
         this.descipcion = descipcion;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
-        return "CategoriaActivity{" +
+        return "Categoria{" +
                 "nombre='" + nombre + '\'' +
                 ", descipcion='" + descipcion + '\'' +
+                ", id=" + id +
                 '}';
     }
 }

@@ -1,15 +1,30 @@
 package com.example.edwin.appmyevents.interfaz.Modelo;
 
-/**
- * Created by sesla on 11/1/2018.
- */
 
 public class Local {
 
+    private int codigo;
     private String nombre;
     private String descripcion;
     private String capacidad;
     private String costo;
+    private String fotoPerfil;
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getFotoPerfil() {
+        return fotoPerfil;
+    }
+
+    public void setFotoPerfil(String fotoPerfil) {
+        this.fotoPerfil = fotoPerfil;
+    }
 
     public String getNombre() {
         return nombre;
@@ -46,10 +61,12 @@ public class Local {
     @Override
     public String toString() {
         return "Local{" +
-                "nombre='" + nombre + '\'' +
+                "codigo=" + codigo +
+                ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", capacidad='" + capacidad + '\'' +
                 ", costo='" + costo + '\'' +
+                ", fotoPerfil='" + fotoPerfil + '\'' +
                 '}';
     }
 }
