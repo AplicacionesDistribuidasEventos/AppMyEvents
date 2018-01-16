@@ -8,4 +8,5 @@
     <string name="title_activity_registros">Registros</string>
     <string name="title_item_list">Categoria</string>
     <string name="title_item_detail">Item Detail</string>
+    <string name="title_activity_consulta_asistencias">ConsultaAsistencias</string>
 </resources>

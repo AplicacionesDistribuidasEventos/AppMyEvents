@@ -22,6 +22,7 @@ import com.example.edwin.appmyevents.R;
 import com.example.edwin.appmyevents.interfaz.Modelo.Login;
 import com.example.edwin.appmyevents.interfaz.Modelo.Persona;
 import com.example.edwin.appmyevents.interfaz.Utilidades.ClienteRest;
+import com.example.edwin.appmyevents.interfaz.Utilidades.ConsultaAsistencias;
 import com.example.edwin.appmyevents.interfaz.Utilidades.OnTaskCompleted;
 
 import java.util.List;
@@ -59,6 +60,9 @@ public class MainActivity extends AppCompatActivity
 
         ImageView imgEventos = findViewById(R.id.imgCategoriaEventos);
         imgEventos.setOnClickListener(this);
+
+        Button btnConsultaAsistencia = (Button)findViewById(R.id.btnConsultaAsistencia);
+        btnConsultaAsistencia.setOnClickListener(this);
     }
 
     @Override
@@ -150,6 +154,11 @@ public class MainActivity extends AppCompatActivity
             case R.id.imgLocales:
                 Intent intent1 = new Intent(this,ListadoLocalesActivity.class);
                 startActivity(intent1);
+                break;
+
+            case R.id.btnConsultaAsistencia:
+                Intent ilasistencias = new Intent(this,ConsultaAsistencias.class);
+                startActivity(ilasistencias);
                 break;
 
             default:
