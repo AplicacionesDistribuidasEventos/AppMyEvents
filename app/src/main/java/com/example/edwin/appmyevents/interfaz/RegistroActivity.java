@@ -3,10 +3,13 @@ package com.example.edwin.appmyevents.interfaz;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.widget.CheckBox;
+import android.util.Patterns;
 
 import com.example.edwin.appmyevents.R;
 import com.example.edwin.appmyevents.interfaz.Modelo.Login;
@@ -22,6 +25,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
     private ClienteRest clienteRest;
     private int WS_GUARDAR = 1;
     private Persona persona = new Persona();
+    private CheckBox opcionMostrar;
 
     EditText nombre;
     EditText apellido;
@@ -37,7 +41,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
 
         Button btnRegres = (Button) findViewById(R.id.btnRegresar2);
         btnRegres.setOnClickListener(this);
-
+        opcionMostrar = (CheckBox)findViewById(R.id.opcion_mostrar);
         nombre = (EditText) findViewById(R.id.txtNombre);
         apellido = (EditText) findViewById(R.id.txtApellido);
         cedula = (EditText) findViewById(R.id.txtCedula);
@@ -90,6 +94,35 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
 
 
     }
+
+    public void mostrarContraseña(View v){
+        // Salvar cursor
+        int cursor = contrasenia.getSelectionEnd();
+
+        if(opcionMostrar.isChecked()){
+            contrasenia.setInputType(InputType.TYPE_CLASS_TEXT
+                    | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+        }else{
+            contrasenia.setInputType(InputType.TYPE_CLASS_TEXT
+                    | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        }
+
+        // Restaurar cursor
+        contrasenia.setSelection(cursor);
+    }
+
+
+    private boolean esCorreoValido(String correovale) {
+        if (!Patterns.EMAIL_ADDRESS.matcher(correovale).matches()) {
+            correo.setError("Correo electrónico inválido");
+            return false;
+        } else {
+            correo.setError(null);
+        }
+
+        return true;
+    }
+
 
     private void guardaPersona() {
         clienteRest = new ClienteRest(this);
