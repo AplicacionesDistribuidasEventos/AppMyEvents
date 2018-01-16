@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.widget.CheckBox;
+import android.text.InputType;
 
 import com.example.edwin.appmyevents.R;
 import com.example.edwin.appmyevents.interfaz.Modelo.Login;
@@ -20,6 +22,7 @@ import java.util.ArrayList;
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener, OnTaskCompleted {
 
     private ClienteRest clienteRest;
+    private CheckBox opcionMostrar;
     private int WS_INGRESA = 1;
     private Login login = new Login();
     EditText correlogin;
@@ -30,7 +33,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     /**
      * DIRECCION IP QUE SE VA A ESTABLECER EN TODOS LOS WS
      * */
-    public static String dir_ip = "192.168.1.3  ";
+    public static String dir_ip = "192.168.1.3";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         passwordlogin = (EditText) findViewById(R.id.txtPasswordLogin);
         contex = this;
         prefs=  getSharedPreferences("eventos", Context.MODE_PRIVATE);
+        opcionMostrar = (CheckBox)findViewById(R.id.opcion_mostrar);
     }
 
     @Override
@@ -65,6 +69,22 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     }
 
+    public void mostrarContraseña(View v){
+        // Salvar cursor
+        int cursor = passwordlogin.getSelectionEnd();
+
+        if(opcionMostrar.isChecked()){
+            passwordlogin.setInputType(InputType.TYPE_CLASS_TEXT
+                    | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+        }else{
+            passwordlogin.setInputType(InputType.TYPE_CLASS_TEXT
+                    | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        }
+
+        // Restaurar cursor
+        passwordlogin.setSelection(cursor);
+    }
+
     private void loginUsuario() {
         clienteRest = new ClienteRest(this);
 
@@ -80,7 +100,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }catch (Exception e){
 
             e.printStackTrace();
-            showMensaje("Error Logeo");
+
+
 /*
             SharedPreferences.Editor editor = prefs.edit();
             editor.putBoolean("login", false);
@@ -125,10 +146,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(i2);
 
             }
+            else {
+                showMensaje("Error de Correo u Contrasenia");
+            }
 
             System.out.println(i);
         }
-
 
     }
 
