@@ -31,15 +31,13 @@
         </activity>
         <activity android:name=".interfaz.LoginActivity" />
         <activity android:name=".interfaz.RegistroActivity" />
-        <activity android:name=".interfaz.CategoriaActivity"
-            android:parentActivityName=".interfaz.MainActivity"
-            >
-
+        <activity
+            android:name=".interfaz.CategoriaActivity"
+            android:parentActivityName=".interfaz.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".interfaz.MainActivity" />
         </activity>
-
         <activity android:name=".interfaz.ReservaActivity" />
         <activity android:name=".interfaz.AyudaActivity" />
         <activity android:name=".interfaz.MainActivity" />
@@ -47,9 +45,9 @@
         <activity android:name=".interfaz.MuestraEvento" />
         <activity android:name=".interfaz.ListadoLocalesActivity" />
         <activity android:name=".interfaz.EditUsuario" />
-        <activity android:name=".interfaz.ListadoImagen">
-
-        </activity>
+        <activity android:name=".interfaz.ListadoImagen" />
+        <activity android:name=".interfaz.LocalesActivity" />
+        <activity android:name=".interfaz.ListarLocalesBusquedaActivity"></activity>
     </application>
 
 </manifest>

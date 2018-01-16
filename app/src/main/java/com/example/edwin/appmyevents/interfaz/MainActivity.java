@@ -59,6 +59,9 @@ public class MainActivity extends AppCompatActivity
 
         ImageView imgEventos = findViewById(R.id.imgCategoriaEventos);
         imgEventos.setOnClickListener(this);
+
+        Button btnlistado = (Button) findViewById(R.id.btnLocalBusqueda);
+        btnlistado.setOnClickListener(this);
     }
 
     @Override
@@ -150,6 +153,10 @@ public class MainActivity extends AppCompatActivity
             case R.id.imgLocales:
                 Intent intent1 = new Intent(this,ListadoLocalesActivity.class);
                 startActivity(intent1);
+                break;
+            case R.id.btnLocalBusqueda:
+                Intent intent6 = new Intent(this,LocalesActivity.class);
+                startActivity(intent6);
                 break;
 
             default:
