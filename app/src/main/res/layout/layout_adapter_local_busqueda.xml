@@ -13,10 +13,12 @@
         android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/fotolocal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
             android:layout_weight="1"
             app:srcCompat="@drawable/event" />
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -64,9 +66,22 @@
                     />
 
 
+
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
 
+                <Button
+                    android:id="@+id/reserva"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Reserva" />
+
+            </LinearLayout>
 
         </LinearLayout>
 

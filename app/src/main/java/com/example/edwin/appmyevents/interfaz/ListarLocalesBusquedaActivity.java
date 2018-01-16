@@ -41,7 +41,7 @@ public class ListarLocalesBusquedaActivity extends AppCompatActivity implements 
         clienteRest = new ClienteRest(this);
         try {
             String url = "http://"+LoginActivity.dir_ip+":8080/MyEvents/rs/locales/listado-locales-fecha?fecha_SR="+LocalesActivity.fec;
-            System.out.println("Timbiiiiiiiiiiii"+LocalesActivity.fec);
+            System.out.println("Datos"+LocalesActivity.fec);
             clienteRest.doGet(url, null, WS_CONSULTA, true);
         } catch (Exception e) {
             showMensaje("Error Consulta");
