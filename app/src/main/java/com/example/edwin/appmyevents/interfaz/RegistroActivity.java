@@ -112,16 +112,6 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
     }
 
 
-    private boolean esCorreoValido(String correovale) {
-        if (!Patterns.EMAIL_ADDRESS.matcher(correovale).matches()) {
-            correo.setError("Correo electrónico inválido");
-            return false;
-        } else {
-            correo.setError(null);
-        }
-
-        return true;
-    }
 
 
     private void guardaPersona() {
