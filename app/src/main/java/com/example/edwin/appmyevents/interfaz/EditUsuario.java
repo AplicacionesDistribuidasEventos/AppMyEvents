@@ -42,6 +42,8 @@ public class EditUsuario extends AppCompatActivity implements OnTaskCompleted, V
 
         Button btnEditaUsuario = (Button)findViewById(R.id.btnEditaUsuario);
         btnEditaUsuario.setOnClickListener(this);
+        Button btnRegres = (Button) findViewById(R.id.btnCancelar);
+        btnRegres.setOnClickListener(this);
 
         txtnombreEdit = (EditText) findViewById(R.id.txtNombreEdit);
 
@@ -70,6 +72,10 @@ public class EditUsuario extends AppCompatActivity implements OnTaskCompleted, V
                 Toast toast = Toast.makeText(context,text,duracion);
                 toast.show();
 
+                break;
+            case R.id.btnCancelar:
+                Intent intent1 = new Intent(this,MainActivity.class);
+                startActivity(intent1);
                 break;
             default:
                 break;

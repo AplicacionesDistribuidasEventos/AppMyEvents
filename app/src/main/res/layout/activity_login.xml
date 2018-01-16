@@ -68,6 +68,16 @@
         android:textStyle="bold"
         android:textColor="#ffffff"/>
 
+    <CheckBox
+        android:id="@+id/opcion_mostrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtPasswordLogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:onClick="mostrarContraseña"
+        android:text="¿Mostrar contraseña?" />
+
     <EditText
         android:id="@+id/txtPasswordLogin"
         android:layout_width="wrap_content"
