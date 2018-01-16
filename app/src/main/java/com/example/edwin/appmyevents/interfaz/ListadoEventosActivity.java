@@ -38,9 +38,6 @@ public class ListadoEventosActivity extends AppCompatActivity implements OnTaskC
         } else {
             Toast.makeText(context, "OOhhhh lo sentimos Profe, se produjo un error :( ", Toast.LENGTH_SHORT).show();
         }
-
-
-
     }
 
     public void listarEvento(int idCategoria) {

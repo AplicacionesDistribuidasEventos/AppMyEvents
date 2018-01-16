@@ -45,11 +45,9 @@
         <activity android:name=".interfaz.MuestraEvento" />
         <activity android:name=".interfaz.ListadoLocalesActivity" />
         <activity android:name=".interfaz.EditUsuario" />
-        <activity android:name=".interfaz.ListadoImagen"></activity>
-        <activity
-            android:name=".interfaz.Utilidades.ConsultaAsistencias"
-            android:label="@string/title_activity_consulta_asistencias"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".interfaz.ListadoImagen" />
+        <activity android:name=".interfaz.LocalesActivity" />
+        <activity android:name=".interfaz.ListarLocalesBusquedaActivity"></activity>
     </application>
 
 </manifest>

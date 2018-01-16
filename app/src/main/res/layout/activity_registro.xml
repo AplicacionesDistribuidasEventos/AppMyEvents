@@ -98,6 +98,7 @@
         android:layout_toEndOf="@+id/textView9"
         android:text="Registrarse"
         android:textColor="#ffffff"
+        android:textStyle="bold"
         style="?android:attr/buttonBarStyle"/>
 
     <Button
@@ -110,6 +111,7 @@
         android:layout_toEndOf="@+id/btnRegistro"
         android:text="Regresar"
         android:textColor="#ffffff"
+        android:textStyle="bold"
         style="?android:attr/buttonBarStyle"/>
 
     <EditText
@@ -135,6 +137,15 @@
         android:textStyle="italic"
         android:inputType="textPersonName" />
 
+    <CheckBox
+        android:id="@+id/opcion_mostrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtPassword"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:onClick="mostrarContraseña"
+        android:text="¿Mostrar contraseña?" />
     <EditText
         android:id="@+id/txtPassword"
         android:layout_width="200dp"
