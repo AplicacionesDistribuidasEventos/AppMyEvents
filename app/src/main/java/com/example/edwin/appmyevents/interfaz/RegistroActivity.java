@@ -59,14 +59,27 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btnRegistro:
-                if(nombre.getText().toString().isEmpty()|| apellido.getText().toString().isEmpty()||cedula.getText().toString().isEmpty()||correo.getText().toString().isEmpty()||contrasenia.getText().toString().isEmpty())
-
+                if(nombre.getText().toString().isEmpty())
                 {
-                    showMensaje("por favor llenar todos los campos");
+                    showMensaje("por favor ingrese su nombre");
                 }
-                else {
+                else if (apellido.getText().toString().isEmpty()) {
+                    showMensaje("por favor ingrese su apellido");
+                }
+                else if (cedula.getText().toString().isEmpty()) {
+                    showMensaje("por favor ingrese su cedula");
+                }
+                else if (correo.getText().toString().isEmpty()){
+                    showMensaje("por favor ingrese su correo");
+                }
+                else if (contrasenia.getText().toString().isEmpty()){
+                    showMensaje("por favor ingrese su contrasenia");
+                }
+                else
+                {
                     guardaPersona();
                 }
+
                 break;
             case R.id.btnRegresar2:
                 Intent intent = new Intent(this,MainActivity.class);
