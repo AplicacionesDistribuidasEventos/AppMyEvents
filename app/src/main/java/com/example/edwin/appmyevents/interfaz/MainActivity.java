@@ -3,8 +3,6 @@ package com.example.edwin.appmyevents.interfaz;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -20,9 +18,7 @@ import android.widget.Toast;
 
 import com.example.edwin.appmyevents.R;
 import com.example.edwin.appmyevents.interfaz.Modelo.Login;
-import com.example.edwin.appmyevents.interfaz.Modelo.Persona;
 import com.example.edwin.appmyevents.interfaz.Utilidades.ClienteRest;
-import com.example.edwin.appmyevents.interfaz.Utilidades.ConsultaAsistencias;
 import com.example.edwin.appmyevents.interfaz.Utilidades.OnTaskCompleted;
 
 import java.util.List;
@@ -62,10 +58,10 @@ public class MainActivity extends AppCompatActivity
         imgEventos.setOnClickListener(this);
 
 
-        Button btnConsultaAsistencia = (Button)findViewById(R.id.btnConsultaAsistencia);
+        ImageView btnConsultaAsistencia = (ImageView) findViewById(R.id.btnConsultaAsistencia);
         btnConsultaAsistencia.setOnClickListener(this);
 
-        Button btnlistado = (Button) findViewById(R.id.btnLocalBusqueda);
+        ImageView btnlistado = (ImageView) findViewById(R.id.btnLocalBusqueda);
         btnlistado.setOnClickListener(this);
 
     }

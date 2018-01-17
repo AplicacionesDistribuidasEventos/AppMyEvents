@@ -33,7 +33,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     /**
      * DIRECCION IP QUE SE VA A ESTABLECER EN TODOS LOS WS
      * */
-    public static String dir_ip = "172.16.223.191";
+    public static String dir_ip = "192.168.0.101";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

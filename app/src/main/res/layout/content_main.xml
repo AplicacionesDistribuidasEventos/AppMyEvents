@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,6 +8,12 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.edwin.appmyevents.interfaz.MainActivity"
     tools:showIn="@layout/app_bar_main">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/textView13"
@@ -27,14 +33,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.162" />
 
-    <ImageView
-        android:id="@+id/imgVerPerfil"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_above="@+id/textView11"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="19dp"
-        app:srcCompat="@drawable/verperfil" />
+        <ImageView
+            android:id="@+id/imgVerPerfil"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_above="@+id/textView11"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginEnd="19dp"
+            app:srcCompat="@drawable/verperfil" />
 
     <TextView
         android:id="@+id/textView11"
@@ -43,10 +50,11 @@
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/imgVerPerfil"
         android:layout_marginBottom="50dp"
-        android:layout_marginStart="14dp"
+        android:layout_marginStart="-12dp"
         android:text="Ver Perfil"
         android:textColor="#ffffff"
         android:textSize="20dp"
+        android:layout_gravity="center_horizontal"
         android:textStyle="bold" />
 
     <ImageView
@@ -55,6 +63,7 @@
         android:layout_height="120dp"
         android:layout_above="@+id/textView12"
         android:layout_alignStart="@+id/textView14"
+        android:layout_gravity="center_horizontal"
         app:srcCompat="@drawable/deleteuser" />
 
     <TextView
@@ -64,6 +73,7 @@
         android:layout_alignStart="@+id/imgCategoriaEventos"
         android:layout_below="@+id/imgVerPerfil"
         android:text="Eliminar Cuenta"
+        android:layout_gravity="center_horizontal"
         android:textColor="#ffffff"
         android:textSize="20dp"
         android:textStyle="bold" />
@@ -74,7 +84,9 @@
         android:layout_height="120dp"
         android:layout_above="@+id/textView14"
         android:layout_alignEnd="@+id/imgEliminiarUsuario"
-        android:layout_marginEnd="23dp"
+        android:layout_marginTop="49dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="0dp"
         app:srcCompat="@drawable/reserva" />
 
     <TextView
@@ -85,6 +97,7 @@
         android:layout_alignBottom="@+id/textView15"
         android:layout_alignStart="@+id/textView13"
         android:text="Eventos"
+        android:layout_gravity="center_horizontal"
         android:textColor="#ffffff"
         android:textSize="20dp"
         android:textStyle="bold" />
@@ -96,6 +109,7 @@
         android:layout_alignEnd="@+id/textView15"
         android:layout_below="@+id/textView13"
         android:layout_marginTop="49dp"
+        android:layout_gravity="center_horizontal"
         app:srcCompat="@drawable/reserloca" />
 
     <TextView
@@ -106,25 +120,50 @@
         android:layout_toEndOf="@+id/imgEliminiarUsuario"
         android:text="Reservar locales"
         android:textColor="#ffffff"
+        android:layout_gravity="center_horizontal"
         android:textSize="20dp"
         android:textStyle="bold" />
 
-    <Button
-
+    <ImageView
         android:id="@+id/btnConsultaAsistencia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView15"
-        android:layout_toStartOf="@+id/imgVerPerfil"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="49dp"
+        app:srcCompat="@drawable/asistencia"
         android:text="Asistencias" />
 
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Listado Asistencia"
+            android:textColor="#ffffff"
+            android:layout_gravity="center_horizontal"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    <ImageView
         android:id="@+id/btnLocalBusqueda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView13"
         android:layout_toStartOf="@+id/imgVerPerfil"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="49dp"
+        app:srcCompat="@drawable/busquedalocal"
         android:text="Busqueda de locales" />
 
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Busqueda de Local"
+            android:textColor="#ffffff"
+            android:layout_gravity="center_horizontal"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
+    </LinearLayout>
 
-</RelativeLayout>
+</ScrollView>
