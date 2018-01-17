@@ -47,7 +47,8 @@
         <activity android:name=".interfaz.EditUsuario" />
         <activity android:name=".interfaz.ListadoImagen" />
         <activity android:name=".interfaz.LocalesActivity" />
-        <activity android:name=".interfaz.ListarLocalesBusquedaActivity"></activity>
+        <activity android:name=".interfaz.ListarLocalesBusquedaActivity"/>
+        <activity android:name=".interfaz.ConsultaAsistencias"></activity>
     </application>
 
 </manifest>
