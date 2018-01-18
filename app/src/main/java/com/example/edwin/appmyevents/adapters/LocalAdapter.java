@@ -65,8 +65,8 @@ public class LocalAdapter extends BaseAdapter {
         Local local = listaLocal.get(position);
         viewHolder.tvnombre.setText(local.getNombre());
         viewHolder.tvDescripcion.setText(local.getDescripcion()+"");
-        System.out.println("http://192.168.1.15/MyEvents/"+local.getFotoPerfil());
-        Picasso.with(context).load("http://192.168.1.15/MyEvents/"+local.getFotoPerfil()).into(viewHolder.ivimagen);
+        System.out.println("http://192.168.0.101/MyEvents/"+local.getFotoPerfil());
+        Picasso.with(context).load("http://192.168.0.101/MyEvents/"+local.getFotoPerfil()).into(viewHolder.ivimagen);
 
         return rowView;
     }

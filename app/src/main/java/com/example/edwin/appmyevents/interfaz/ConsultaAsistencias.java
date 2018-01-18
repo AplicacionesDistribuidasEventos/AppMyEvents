@@ -1,4 +1,4 @@
-package com.example.edwin.appmyevents.interfaz.Utilidades;
+package com.example.edwin.appmyevents.interfaz;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,6 +15,8 @@ import com.example.edwin.appmyevents.adapters.EventoConslAdapter;
 import com.example.edwin.appmyevents.interfaz.LoginActivity;
 import com.example.edwin.appmyevents.interfaz.MainActivity;
 import com.example.edwin.appmyevents.interfaz.Modelo.Evento;
+import com.example.edwin.appmyevents.interfaz.Utilidades.ClienteRest;
+import com.example.edwin.appmyevents.interfaz.Utilidades.OnTaskCompleted;
 
 import java.util.ArrayList;
 
@@ -64,7 +66,6 @@ public class ConsultaAsistencias extends AppCompatActivity implements OnTaskComp
         if (idSolicitud == WS_CONSULTA) {
             if (!clienteRest.isCancelled()) {
                 ArrayList<Evento> listEveCon = (ArrayList<Evento>) clienteRest.getResultList(Evento.class);
-
                 EventoConslAdapter conslAdapter = new EventoConslAdapter(listEveCon, context);
                 listView.setAdapter(conslAdapter);
             }
