@@ -43,6 +43,9 @@ public class LocalesActivity extends AppCompatActivity implements View.OnClickLi
 
         //final Local local = new Local();
 
+        Button btnRegres = (Button) findViewById(R.id.btnRegresar2);
+        btnRegres.setOnClickListener(this);
+
         bton = (Button) findViewById(R.id.listar);
         bton.setOnClickListener(this);
 
