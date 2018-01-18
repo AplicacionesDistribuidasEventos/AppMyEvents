@@ -6,7 +6,28 @@
     android:layout_height="match_parent"
     tools:context="com.example.edwin.appmyevents.interfaz.LocalesActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#db898d"
+        android:theme="@style/AppTheme"
+        app:popupTheme="@style/AppTheme.PopupOverlay" />
 
+    <Button
+        android:id="@+id/btnRegresar2"
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/toolbar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:drawableLeft="@drawable/regresar"
+        android:text="Regresar"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
     <TextView
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
