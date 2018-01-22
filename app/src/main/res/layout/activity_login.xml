@@ -7,6 +7,7 @@
     android:background="@drawable/fondologin"
     tools:context="com.example.edwin.appmyevents.interfaz.LoginActivity" >
 
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -16,6 +17,7 @@
         android:background="#db898d"
         android:theme="@style/AppTheme"
         app:popupTheme="@style/AppTheme.PopupOverlay" />
+
 
     <Button
         android:id="@+id/btnIngresar"
@@ -103,4 +105,5 @@
         android:inputType="textEmailAddress"
         android:singleLine="true"
         android:textStyle="italic" />
+
 </RelativeLayout>

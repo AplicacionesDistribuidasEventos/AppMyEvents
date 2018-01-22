@@ -1,13 +1,22 @@
 package com.example.edwin.appmyevents.interfaz;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
+import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.CheckBox;
 import android.text.InputType;
@@ -16,8 +25,20 @@ import com.example.edwin.appmyevents.R;
 import com.example.edwin.appmyevents.interfaz.Modelo.Login;
 import com.example.edwin.appmyevents.interfaz.Utilidades.ClienteRest;
 import com.example.edwin.appmyevents.interfaz.Utilidades.OnTaskCompleted;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
 
+import org.json.JSONObject;
+
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener, OnTaskCompleted {
 
@@ -30,10 +51,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public static int cod_per;
     SharedPreferences prefs ;
     Context contex;
+
+
+
     /**
      * DIRECCION IP QUE SE VA A ESTABLECER EN TODOS LOS WS
      * */
     public static String dir_ip = "192.168.1.108";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +72,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         contex = this;
         prefs=  getSharedPreferences("eventos", Context.MODE_PRIVATE);
         opcionMostrar = (CheckBox)findViewById(R.id.opcion_mostrar);
+
+
     }
+
+
 
     @Override
     public void onClick(View view) {

@@ -16,9 +16,6 @@ import com.example.edwin.appmyevents.interfaz.Modelo.Evento;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by asus on 16/01/2018.
- */
 
 public class EventoConslAdapter extends BaseAdapter {
 

@@ -9,6 +9,15 @@ public class Local {
     private String capacidad;
     private String costo;
     private String fotoPerfil;
+    private String telefono;
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
 
     public int getCodigo() {
         return codigo;
@@ -67,6 +76,7 @@ public class Local {
                 ", capacidad='" + capacidad + '\'' +
                 ", costo='" + costo + '\'' +
                 ", fotoPerfil='" + fotoPerfil + '\'' +
+                ", telefono='" + telefono + '\'' +
                 '}';
     }
 }
