@@ -9,4 +9,8 @@
     <string name="title_item_list">Categoria</string>
     <string name="title_item_detail">Item Detail</string>
     <string name="title_activity_consulta_asistencias">ConsultaAsistencias</string>
+
+    <string name="facebook_app_id">2103461999887232</string>
+    <string name="fb_login_protocol_scheme">fb2103461999887232</string>
+
 </resources>

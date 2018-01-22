@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.edwin.appmyevents.R;
+import com.example.edwin.appmyevents.interfaz.LoginActivity;
 import com.example.edwin.appmyevents.interfaz.Modelo.Local;
 import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
@@ -65,8 +66,8 @@ public class LocalAdapter extends BaseAdapter {
         Local local = listaLocal.get(position);
         viewHolder.tvnombre.setText(local.getNombre());
         viewHolder.tvDescripcion.setText(local.getDescripcion()+"");
-        System.out.println("http://192.168.0.101/MyEvents/"+local.getFotoPerfil());
-        Picasso.with(context).load("http://192.168.0.101/MyEvents/"+local.getFotoPerfil()).into(viewHolder.ivimagen);
+        System.out.println("http://"+LoginActivity.dir_ip+"/MyEvents/"+local.getFotoPerfil());
+        Picasso.with(context).load("http://"+LoginActivity.dir_ip+"/MyEvents/"+local.getFotoPerfil()).fit().centerInside().into(viewHolder.ivimagen);
 
         return rowView;
     }

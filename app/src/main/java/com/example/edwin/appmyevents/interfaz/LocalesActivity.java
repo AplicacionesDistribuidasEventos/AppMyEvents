@@ -1,14 +1,18 @@
 package com.example.edwin.appmyevents.interfaz;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,17 +35,43 @@ public class LocalesActivity extends AppCompatActivity implements View.OnClickLi
     private DatePicker calendario;
     int dia, mes, anio;
     Context context;
-
+    private ListView listViewBusqueda;
     Button bton ;
+    EditText txtBusqueda;
+    ClienteRest clienteRest;
 
     public static String fec;
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_locales);
 
         //final Local local = new Local();
+        /*listViewBusqueda = (ListView) findViewById(R.id.lista);
+        txtBusqueda = (EditText) findViewById(R.id.txtbusqueda);
+        ArrayList<Local> locales = (ArrayList<Local>) clienteRest.getResultList(Local.class);
+        final LocalBusquedaAdapter localBusquedaAdapter = new LocalBusquedaAdapter(locales, this);
+        listViewBusqueda.setAdapter(localBusquedaAdapter);
+
+        txtBusqueda.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                localBusquedaAdapter.getItem(i);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });*/
+        ///////////////////////
 
         bton = (Button) findViewById(R.id.listar);
         bton.setOnClickListener(this);

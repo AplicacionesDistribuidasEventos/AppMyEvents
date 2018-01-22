@@ -9,17 +9,26 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.edwin.appmyevents.R;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
 
 public class Ingreso extends AppCompatActivity implements View.OnClickListener{
 
 
     SharedPreferences prefs ;
     Context contex;
-
+    LoginButton login_button;
+    CallbackManager callbackManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_ingreso);
 
         Button btnLoginPrincipal = (Button) findViewById(R.id.btnLoginPrincipal);
@@ -43,8 +52,39 @@ public class Ingreso extends AppCompatActivity implements View.OnClickListener{
 */
         ////akiiii
 
+        initializeControls();
+        loginConFB();
     }
 
+    private void initializeControls(){
+        callbackManager = CallbackManager.Factory.create();
+        login_button = (LoginButton) findViewById(R.id.login_button);
+    }
+
+    private void loginConFB(){
+        LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+
+            }
+
+            @Override
+            public void onCancel() {
+
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        callbackManager.onActivityResult(requestCode, resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 
     @Override
     public void onClick(View view) {
