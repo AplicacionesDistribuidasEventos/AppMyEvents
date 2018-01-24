@@ -1,11 +1,6 @@
 package com.example.edwin.appmyevents.adapters;
 
-import android.Manifest;
 import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
-import android.support.v4.app.ActivityCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,15 +10,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.edwin.appmyevents.R;
-import com.example.edwin.appmyevents.interfaz.Controlador.Confirmar_Asistencia;
-import com.example.edwin.appmyevents.interfaz.Controlador.ReservaLocal;
-import com.example.edwin.appmyevents.interfaz.ListadoLocalesActivity;
-import com.example.edwin.appmyevents.interfaz.LocalesActivity;
 import com.example.edwin.appmyevents.interfaz.LoginActivity;
-import com.example.edwin.appmyevents.interfaz.Modelo.Evento;
 import com.example.edwin.appmyevents.interfaz.Modelo.Local;
 import com.squareup.picasso.Picasso;
 
@@ -87,9 +76,9 @@ public class LocalBusquedaAdapter extends BaseAdapter {
             viewHolder.tvfoto = rowView.findViewById(R.id.fotolocal);
             viewHolder.btnreserva = rowView.findViewById(R.id.reserva);
             viewHolder.llamar = rowView.findViewById(R.id.llamada);
-            viewHolder.ecomentario = rowView.findViewById(R.id.comentario);
-            viewHolder.tvcomentario = rowView.findViewById(R.id.comenariovista);
-            viewHolder.listView = rowView.findViewById(R.id.listaComentarios);
+            //viewHolder.ecomentario = rowView.findViewById(R.id.comentario);
+            //viewHolder.tvcomentario = rowView.findViewById(R.id.comenariovista);
+            //viewHolder.listView = rowView.findViewById(R.id.listaComentarios);
             System.out.println("Siiiiiiiiiiiiiiiiiiiii33333333333333333333333333");
             rowView.setTag(viewHolder);
 
@@ -107,6 +96,7 @@ public class LocalBusquedaAdapter extends BaseAdapter {
         System.out.println("http://"+LoginActivity.dir_ip+"/MyEvents/"+local.getFotoPerfil());
         Picasso.with(context).load("http://"+ LoginActivity.dir_ip+"/MyEvents/"+local.getFotoPerfil()).fit().into(viewHolder.tvfoto);
 
+        /*
         viewHolder.btnreserva.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -127,7 +117,7 @@ public class LocalBusquedaAdapter extends BaseAdapter {
                     context.startActivity(i);
 
             }
-        });
+        });*/
 
         //viewHolder.ecomentario
 

@@ -157,7 +157,7 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intent1);
                 break;
             case R.id.btnLocalBusqueda:
-                Intent intent6 = new Intent(this,LocalesActivity.class);
+                Intent intent6 = new Intent(this,ListarLocalesBusquedaActivity.class);
                 startActivity(intent6);
                 break;
 

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context="com.example.edwin.appmyevents.interfaz.DetalleLocal">
 
     <LinearLayout
@@ -96,6 +97,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:orientation="vertical"
+            android:layout_margin="5dp"
             android:id="@+id/ratings"
             android:layout_height="wrap_content">
 
@@ -104,41 +106,41 @@
                 android:orientation="horizontal"
                 android:layout_gravity="center_horizontal"
                 android:layout_height="wrap_content">
-            <CheckBox
-                android:id="@+id/estrella"
-                style="?android:attr/starStyle"
-                android:tag="1"
-                android:layout_gravity="center_horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <CheckBox
-                android:id="@+id/estrella2"
-                style="?android:attr/starStyle"
-                android:layout_gravity="center_horizontal"
-                android:tag="2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <CheckBox
-                android:id="@+id/estrella3"
-                style="?android:attr/starStyle"
-                android:layout_gravity="center_horizontal"
-                android:tag="3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <CheckBox
-                android:id="@+id/estrella4"
-                style="?android:attr/starStyle"
-                android:tag="4"
-                android:layout_gravity="center_horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <CheckBox
-                android:id="@+id/estrella5"
-                style="?android:attr/starStyle"
-                android:layout_gravity="center_horizontal"
-                android:tag="5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                <CheckBox
+                    android:id="@+id/estrella"
+                    style="?android:attr/starStyle"
+                    android:tag="1"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <CheckBox
+                    android:id="@+id/estrella2"
+                    style="?android:attr/starStyle"
+                    android:layout_gravity="center_horizontal"
+                    android:tag="2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <CheckBox
+                    android:id="@+id/estrella3"
+                    style="?android:attr/starStyle"
+                    android:layout_gravity="center_horizontal"
+                    android:tag="3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <CheckBox
+                    android:id="@+id/estrella4"
+                    style="?android:attr/starStyle"
+                    android:tag="4"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <CheckBox
+                    android:id="@+id/estrella5"
+                    style="?android:attr/starStyle"
+                    android:layout_gravity="center_horizontal"
+                    android:tag="5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
             </LinearLayout>
 
             <ListView
@@ -146,9 +148,22 @@
                 android:layout_width="350dp"
                 android:layout_height="100dp"></ListView>
 
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/etComentario"
+                android:hint="Ingresa un comentario"/>
+
+            <Button
+                android:id="@+id/guardaComentario"
+                android:layout_width="match_parent"
+                android:onClick="GuardarComentario"
+                android:text="Guardar Comentario"
+                android:layout_height="wrap_content" />
+
 
         </LinearLayout>
 
     </LinearLayout>
 
-</RelativeLayout>
+</ScrollView>

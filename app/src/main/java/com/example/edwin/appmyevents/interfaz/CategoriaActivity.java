@@ -76,6 +76,11 @@ public class CategoriaActivity extends AppCompatActivity implements OnTaskComple
         }
     }
 
+    @Override
+    public void onClick(View view) {
+
+    }
+
     /**
      * Permite mostrar un mensaje Toast en pantalla,
      *
