@@ -17,7 +17,7 @@ android {
         }
     }
     useLibrary 'org.apache.http.legacy'
-    repositories{
+    repositories {
         mavenCentral()
     }
 }
@@ -43,4 +43,7 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.loopj.android:android-async-http:1.4.9'
     compile 'com.github.snowdream.android:smartimageview:0.0.2'
+    compile 'com.google.firebase:firebase-core:11.6.2'
+    compile 'com.google.firebase:firebase-messaging:11.6.2'
 }
+apply plugin: 'com.google.gms.google-services'

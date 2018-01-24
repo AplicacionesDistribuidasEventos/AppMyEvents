@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "76457040795",
+    "firebase_url": "https://appmyevents-df21b.firebaseio.com",
+    "project_id": "appmyevents-df21b",
+    "storage_bucket": "appmyevents-df21b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:76457040795:android:31017d8cc39ed802",
+        "android_client_info": {
+          "package_name": "com.example.edwin.appmyevents"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "76457040795-drm79k8lr6kfm75ltok2funs525hjin7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBj9TEwAXy8kJiowA0lZRL63vDPo6YeoRE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

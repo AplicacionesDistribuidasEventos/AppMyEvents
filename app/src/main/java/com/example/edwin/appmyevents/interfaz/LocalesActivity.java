@@ -47,32 +47,7 @@ public class LocalesActivity extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_locales);
-
-        //final Local local = new Local();
-        /*listViewBusqueda = (ListView) findViewById(R.id.lista);
-        txtBusqueda = (EditText) findViewById(R.id.txtbusqueda);
-        ArrayList<Local> locales = (ArrayList<Local>) clienteRest.getResultList(Local.class);
-        final LocalBusquedaAdapter localBusquedaAdapter = new LocalBusquedaAdapter(locales, this);
-        listViewBusqueda.setAdapter(localBusquedaAdapter);
-
-        txtBusqueda.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                localBusquedaAdapter.getItem(i);
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });*/
-        ///////////////////////
-
+        
         bton = (Button) findViewById(R.id.listar);
         bton.setOnClickListener(this);
 

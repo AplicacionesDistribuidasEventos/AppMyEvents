@@ -11,7 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,9 +35,11 @@ public class LocalBusquedaAdapter extends BaseAdapter {
 
 
     public class ViewHolder {
-        TextView tvnombre, tvDescripcion, tvCosto, tvcapacidad;
+        TextView tvnombre, tvDescripcion, tvCosto, tvcapacidad, tvcomentario;
         ImageView tvfoto;
         Button btnreserva, llamar;
+        EditText ecomentario;
+        ListView listView;
     }
 
     public List<Local> listaLocal =new ArrayList<Local>();
@@ -83,6 +87,9 @@ public class LocalBusquedaAdapter extends BaseAdapter {
             viewHolder.tvfoto = rowView.findViewById(R.id.fotolocal);
             viewHolder.btnreserva = rowView.findViewById(R.id.reserva);
             viewHolder.llamar = rowView.findViewById(R.id.llamada);
+            viewHolder.ecomentario = rowView.findViewById(R.id.comentario);
+            viewHolder.tvcomentario = rowView.findViewById(R.id.comenariovista);
+            viewHolder.listView = rowView.findViewById(R.id.listaComentarios);
             System.out.println("Siiiiiiiiiiiiiiiiiiiii33333333333333333333333333");
             rowView.setTag(viewHolder);
 
@@ -121,6 +128,8 @@ public class LocalBusquedaAdapter extends BaseAdapter {
 
             }
         });
+
+        //viewHolder.ecomentario
 
         return rowView;
     }

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context="com.example.edwin.appmyevents.interfaz.DetalleLocal">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,7 +14,7 @@
 
 
         <ImageView
-            android:id="@+id/fotolocal"
+            android:id="@+id/fotolocaldetalle"
             android:layout_width="match_parent"
             android:layout_height="250sp"
             android:layout_weight="1"
@@ -28,21 +28,21 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/nombre"
+                android:id="@+id/nombredetalle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:text="TextView" />
             <TextView
-                android:id="@+id/descripcion"
+                android:id="@+id/descripciondetalle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
                 android:text="TextView" />
 
             <TextView
-                android:id="@+id/capacidad"
+                android:id="@+id/capacidadetalle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TextView" />
@@ -53,7 +53,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/costo"
+                    android:id="@+id/costodetalle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="20 USD"
@@ -91,32 +91,64 @@
 
             </LinearLayout>
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/ratings"
+            android:layout_height="wrap_content">
+
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:orientation="vertical"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
                 android:layout_height="wrap_content">
-
-                <EditText
-                    android:id="@+id/comentario"
-                    android:layout_width="345dp"
-                    android:layout_height="wrap_content" />
-                <TextView
-                    android:text="Comentario.."
-                    android:id="@+id/comenariovista"
-                    android:layout_width="345dp"
-                    android:layout_height="wrap_content" />
-
-                <ListView
-                    android:id="@+id/listaComentarios"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-                </ListView>
-
-
+            <CheckBox
+                android:id="@+id/estrella"
+                style="?android:attr/starStyle"
+                android:tag="1"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <CheckBox
+                android:id="@+id/estrella2"
+                style="?android:attr/starStyle"
+                android:layout_gravity="center_horizontal"
+                android:tag="2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <CheckBox
+                android:id="@+id/estrella3"
+                style="?android:attr/starStyle"
+                android:layout_gravity="center_horizontal"
+                android:tag="3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <CheckBox
+                android:id="@+id/estrella4"
+                style="?android:attr/starStyle"
+                android:tag="4"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <CheckBox
+                android:id="@+id/estrella5"
+                style="?android:attr/starStyle"
+                android:layout_gravity="center_horizontal"
+                android:tag="5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
             </LinearLayout>
+
+            <ListView
+                android:id="@+id/listadetalle"
+                android:layout_width="350dp"
+                android:layout_height="100dp"></ListView>
+
 
         </LinearLayout>
 
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>
