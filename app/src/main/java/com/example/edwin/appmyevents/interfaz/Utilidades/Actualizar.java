@@ -37,4 +37,9 @@ public class Actualizar implements OnTaskCompleted{
         }
     }
 
+    @Override
+    public void onClick(View view) {
+
+    }
+
 }

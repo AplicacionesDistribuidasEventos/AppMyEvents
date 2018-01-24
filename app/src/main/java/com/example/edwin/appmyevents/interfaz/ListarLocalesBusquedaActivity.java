@@ -122,6 +122,11 @@ public class ListarLocalesBusquedaActivity extends AppCompatActivity implements 
 
     }
 
+    @Override
+    public void onClick(View view) {
+
+    }
+
     /**
      * Permite mostrar un mensaje Toast en pantalla,
      *

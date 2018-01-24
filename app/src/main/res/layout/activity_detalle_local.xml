@@ -155,6 +155,7 @@
                 android:hint="Ingresa un comentario"/>
 
             <Button
+                android:id="@+id/guardaComentario"
                 android:layout_width="match_parent"
                 android:onClick="GuardarComentario"
                 android:text="Guardar Comentario"
