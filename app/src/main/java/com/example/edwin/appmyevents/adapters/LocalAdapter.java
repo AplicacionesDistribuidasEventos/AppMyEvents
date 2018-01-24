@@ -19,7 +19,7 @@ public class LocalAdapter extends BaseAdapter {
 
 
     public class ViewHolder {
-        TextView tvnombre, tvDescripcion;
+        TextView tvnombres, tvDescripcion;
         ImageView ivimagen;
     }
 
@@ -56,7 +56,7 @@ public class LocalAdapter extends BaseAdapter {
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             rowView = inflater.inflate(R.layout.layout_adapter_local, null);
             viewHolder = new LocalAdapter.ViewHolder();
-            viewHolder.tvnombre = rowView.findViewById(R.id.nombre);
+            viewHolder.tvnombres = rowView.findViewById(R.id.nombress);
             viewHolder.tvDescripcion =rowView.findViewById(R.id.descripcion);
             viewHolder.ivimagen = rowView.findViewById(R.id.imageViewLocal);
         } else {
@@ -64,7 +64,7 @@ public class LocalAdapter extends BaseAdapter {
         }
 
         Local local = listaLocal.get(position);
-        viewHolder.tvnombre.setText(local.getNombre());
+        viewHolder.tvnombres.setText(local.getNombre());
         viewHolder.tvDescripcion.setText(local.getDescripcion()+"");
         System.out.println("http://"+LoginActivity.dir_ip+"/MyEvents/"+local.getFotoPerfil());
         Picasso.with(context).load("http://"+LoginActivity.dir_ip+"/MyEvents/"+local.getFotoPerfil()).fit().centerInside().into(viewHolder.ivimagen);

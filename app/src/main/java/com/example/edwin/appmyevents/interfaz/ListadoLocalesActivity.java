@@ -44,12 +44,6 @@ public class ListadoLocalesActivity extends AppCompatActivity implements OnTaskC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listado_locales);
 
-        //listaLocales(new ArrayList<Local>());
-
-        //ListView list11=(ListView) findViewById(R.id.listViewLocal);
-
-
-        /////////////////
         listView = findViewById(R.id.listViewLocal);
         listaLocales(new ArrayList<Local>());
         context = this;
@@ -64,15 +58,6 @@ public class ListadoLocalesActivity extends AppCompatActivity implements OnTaskC
             }
         });
 
-
-        ////////////////
-
-        //list11.setOnItemClickListener(this);
-        //listarEvento(new ArrayList<Evento>());
-
-
-        //client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
-
     }
 
 
@@ -83,7 +68,7 @@ public class ListadoLocalesActivity extends AppCompatActivity implements OnTaskC
 
     public void listaLocales(ArrayList<Local> locals ){
         clienteRest = new ClienteRest(this);
-        Local local = new Local();
+        //Local local = new Local();
         try {
 
             String url1 = "http://"+LoginActivity.dir_ip+":8080/MyEvents/rs/locales/listado-locales";
