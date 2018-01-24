@@ -112,6 +112,8 @@ public class ListarLocalesBusquedaActivity extends AppCompatActivity implements 
                         intent.putExtra("costo", local.getCosto());
                         intent.putExtra("fotoPerfil", local.getFotoPerfil());
                         intent.putExtra("telefono", local.getTelefono());
+                        intent.putExtra("latitud", local.getLatitud());
+                        intent.putExtra("longitud", local.getLongitud());
 
                         startActivity(intent);
                     }

@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.edwin.appmyevents.MapaLocal;
 import com.example.edwin.appmyevents.R;
 import com.example.edwin.appmyevents.adapters.ComentarioAdapter;
 import com.example.edwin.appmyevents.adapters.LocalAdapter;
@@ -47,6 +48,13 @@ public class DetalleLocal extends AppCompatActivity implements OnTaskCompleted {
     Button llamada, reserva, comentarioT;
     ListView listadetalle;
     EditText etComentario;
+    Button btnmapa;
+
+    /**
+     * VARIABLES UTILIZADAS PARA LOCALIZACION*/
+    public static String latitud;
+    public static String longitud;
+    public static String nlocal;
 
 
     @Override
@@ -63,6 +71,7 @@ public class DetalleLocal extends AppCompatActivity implements OnTaskCompleted {
         reserva = findViewById(R.id.reserva);
         listadetalle = findViewById(R.id.listadetalle);
         etComentario = findViewById(R.id.etComentario);
+        btnmapa = findViewById(R.id.btnmapa);
 
         comentarioT = findViewById(R.id.guardaComentario);
 
@@ -76,11 +85,14 @@ public class DetalleLocal extends AppCompatActivity implements OnTaskCompleted {
 
         codigo = intent.getIntExtra("codigo", 0);
         nombre = intent.getStringExtra("nombre");
+        nlocal = nombre;
         descripcion = intent.getStringExtra("descripcion");
         capacidad = intent.getStringExtra("capacidad");
         costo = intent.getStringExtra("costo");
         fotoPerfil = intent.getStringExtra("fotoPerfil");
         telefono = intent.getStringExtra("telefono");
+        latitud = intent.getStringExtra("latitud");
+        longitud = intent.getStringExtra("longitud");
 
         Picasso.with(context).load("http://" + LoginActivity.dir_ip + "/MyEvents/" + fotoPerfil).fit().centerInside().into(fotolocaldetalle);
         nombredetalle.setText(nombre);
@@ -105,6 +117,17 @@ public class DetalleLocal extends AppCompatActivity implements OnTaskCompleted {
         });
 
 
+        btnmapa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Toast.makeText(context,"Cargando ubicacion de: "+nlocal,Toast.LENGTH_SHORT).show();
+
+                Intent iubicacion = new Intent(context, MapaLocal.class);
+                //view.getContext().startActivity(iubicacion);
+                startActivity(iubicacion);
+            }
+        });
        /* comentarioT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
