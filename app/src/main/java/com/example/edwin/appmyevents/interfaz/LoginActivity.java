@@ -57,8 +57,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     /**
      * DIRECCION IP QUE SE VA A ESTABLECER EN TODOS LOS WS
      * */
-    public static String dir_ip = "172.16.215.183";
 
+    public static String dir_ip = "192.168.1.108";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,6 +90,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             else {
                     loginUsuario();
                 }
+                break;
+
+
+            case R.id.btnRegresar2:
+                Intent intent = new Intent(this,Ingreso.class);
+                startActivity(intent);
                 break;
 
             default:

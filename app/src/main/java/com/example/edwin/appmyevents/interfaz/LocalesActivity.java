@@ -47,7 +47,10 @@ public class LocalesActivity extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_locales);
-        
+
+        Button btnRegres = (Button) findViewById(R.id.btnRegresar2);
+        btnRegres.setOnClickListener(this);
+
         bton = (Button) findViewById(R.id.listar);
         bton.setOnClickListener(this);
 

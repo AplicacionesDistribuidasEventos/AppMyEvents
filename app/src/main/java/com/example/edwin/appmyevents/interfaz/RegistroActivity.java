@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 import android.widget.CheckBox;
 import android.util.Patterns;
+import android.support.v7.widget.Toolbar;
+import java.util.regex.Pattern;
 
 import com.example.edwin.appmyevents.R;
 import com.example.edwin.appmyevents.interfaz.Modelo.Login;
@@ -95,6 +97,9 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
 
     }
 
+
+
+
     public void mostrarContraseña(View v){
         // Salvar cursor
         int cursor = contrasenia.getSelectionEnd();
@@ -112,9 +117,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
     }
 
 
-
-
-    private void guardaPersona() {
+        private void guardaPersona() {
         clienteRest = new ClienteRest(this);
 
         try {
