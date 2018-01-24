@@ -14,10 +14,41 @@
     tools:showIn="@layout/activity_listar_locales_busqueda"
     >
 
+    <TextView
+        android:id="@+id/scooby"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Buscar por Fecha"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/tvFecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/scooby"
+        android:text="dame click"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/listar"
+        android:background="@color/colorAccent"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/tvFecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="Buscar"
+        android:text="Buscar"
+        tools:ignore="OnClick" />
+
+
+
     <ListView
         android:layout_width="match_parent"
+        android:layout_below="@+id/listar"
         android:layout_height="match_parent"
         android:id="@+id/listViewLocalBusqueda"
-        android:layout_alignEnd="@+id/textView4" />
+        />
 
 </RelativeLayout>
