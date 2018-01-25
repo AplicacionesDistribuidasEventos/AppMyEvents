@@ -72,7 +72,9 @@ public class ListarLocalesBusquedaActivity extends AppCompatActivity implements 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
         tvFecha.setText(simpleDateFormat.format(new Date()));
-
+        /**SETEO LA FECHA
+         * */
+        fec = tvFecha.getText().toString();
     }
 
     private void listarLocalBusqueda() {

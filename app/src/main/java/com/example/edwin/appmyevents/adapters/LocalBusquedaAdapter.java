@@ -1,6 +1,11 @@
 package com.example.edwin.appmyevents.adapters;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.support.v4.app.ActivityCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +15,11 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.edwin.appmyevents.R;
+import com.example.edwin.appmyevents.interfaz.Controlador.ReservaLocal;
+import com.example.edwin.appmyevents.interfaz.ListarLocalesBusquedaActivity;
 import com.example.edwin.appmyevents.interfaz.LoginActivity;
 import com.example.edwin.appmyevents.interfaz.Modelo.Local;
 import com.squareup.picasso.Picasso;
@@ -96,28 +104,28 @@ public class LocalBusquedaAdapter extends BaseAdapter {
         System.out.println("http://"+LoginActivity.dir_ip+"/MyEvents/"+local.getFotoPerfil());
         Picasso.with(context).load("http://"+ LoginActivity.dir_ip+"/MyEvents/"+local.getFotoPerfil()).fit().into(viewHolder.tvfoto);
 
-        /*
-        viewHolder.btnreserva.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Local local1 = (Local) getItem(position);
-                Toast.makeText(context,"Reserva Satisfactoria..!!!:"+local1.getCodigo(),Toast.LENGTH_SHORT).show();
-                String fecha = LocalesActivity.fec;
-                ReservaLocal res = new ReservaLocal(local1.getCodigo(), fecha);
-            }
-        });
 
-        viewHolder.llamar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Local l = (Local) getItem(position);
-                Intent i = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+l.getTelefono()));
-                if(ActivityCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE)!= PackageManager.PERMISSION_GRANTED)
-                    return;
-                    context.startActivity(i);
-
-            }
-        });*/
+//        viewHolder.btnreserva.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Local local1 = (Local) getItem(position);
+//                Toast.makeText(context,"Reserva Satisfactoria..!!!:"+local1.getCodigo(),Toast.LENGTH_SHORT).show();
+//                String fecha = ListarLocalesBusquedaActivity.fec;
+//                ReservaLocal res = new ReservaLocal(local1.getCodigo(), fecha);
+//            }
+//        });
+//
+//        viewHolder.llamar.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Local l = (Local) getItem(position);
+//                Intent i = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+l.getTelefono()));
+//                if(ActivityCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE)!= PackageManager.PERMISSION_GRANTED)
+//                    return;
+//                    context.startActivity(i);
+//
+//            }
+//        });
 
         //viewHolder.ecomentario
 

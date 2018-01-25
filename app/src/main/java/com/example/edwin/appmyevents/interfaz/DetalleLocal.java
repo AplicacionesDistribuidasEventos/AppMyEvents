@@ -1,7 +1,11 @@
 package com.example.edwin.appmyevents.interfaz;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,18 +23,23 @@ import com.example.edwin.appmyevents.MapaLocal;
 import com.example.edwin.appmyevents.R;
 import com.example.edwin.appmyevents.adapters.ComentarioAdapter;
 import com.example.edwin.appmyevents.adapters.LocalAdapter;
+import com.example.edwin.appmyevents.interfaz.Controlador.ReservaLocal;
 import com.example.edwin.appmyevents.interfaz.Modelo.Comentario;
 import com.example.edwin.appmyevents.interfaz.Modelo.Local;
+import com.example.edwin.appmyevents.interfaz.Modelo.Respuesta;
 import com.example.edwin.appmyevents.interfaz.Utilidades.ClienteRest;
 import com.example.edwin.appmyevents.interfaz.Utilidades.OnTaskCompleted;
 import com.squareup.picasso.Picasso;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 
 public class DetalleLocal extends AppCompatActivity implements OnTaskCompleted {
 
     private ClienteRest clienteRest;
     private int WS_CONSULTA = 1;
+    private int WS_GUARDAR = 2;
     LinearLayout rating;
     CheckBox estrella;
     Context context;
@@ -105,14 +114,24 @@ public class DetalleLocal extends AppCompatActivity implements OnTaskCompleted {
         llamada.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+//                Local l = new Local();
+                System.out.println("LAMADAAAAAAAAAAAAAAA "+telefono);
+                Intent i = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+telefono));
+                if(ActivityCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE)!= PackageManager.PERMISSION_GRANTED)
+                    return;
+                    context.startActivity(i);
 
             }
         });
 
+
         reserva.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+//                Local local1 = view.geti
+                Toast.makeText(context,"Reserva Satisfactoria..!!!:"+codigo,Toast.LENGTH_SHORT).show();
+                String fecha = ListarLocalesBusquedaActivity.fec;
+                ReservaLocal res = new ReservaLocal(codigo, fecha);
             }
         });
 
@@ -128,23 +147,28 @@ public class DetalleLocal extends AppCompatActivity implements OnTaskCompleted {
                 startActivity(iubicacion);
             }
         });
-       /* comentarioT.setOnClickListener(new View.OnClickListener() {
+       comentarioT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                GuardarComentario(view);
+                try {
+                    GuardarComentario(view);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
             }
-        });*/
+        });
 
     }
 
 
-    public void GuardarComentario(View view) {
+    public void GuardarComentario(View view) throws UnsupportedEncodingException {
         String comentario = etComentario.getText().toString();
+        comentario = URLEncoder.encode(comentario, "UTF-8");
         clienteRest = new ClienteRest(this);
         try {
             String url = "http://" + LoginActivity.dir_ip + ":8080/MyEvents/rs/Comentarios/agregar-comentario-local?id_local=" + codigo + "&loc_descripcion=" + comentario + "&id_user=" + LoginActivity.cod_per;
             System.out.println("URL :  ==> " + url);
-            clienteRest.doGet(url, null, WS_CONSULTA, true);
+            clienteRest.doGet(url, null, WS_GUARDAR, true);
         } catch (Exception e) {
             showMensaje("Error Consulta");
             e.printStackTrace();
@@ -195,6 +219,19 @@ public class DetalleLocal extends AppCompatActivity implements OnTaskCompleted {
                 listadetalle.setAdapter(localBusquedaAdapter);
 
             }
+        }else if(idSolicitud == WS_GUARDAR){
+            if(!clienteRest.isCancelled()){
+                Respuesta r = new Respuesta();
+                r = clienteRest.getResult(Respuesta.class);
+                Toast toast = Toast.makeText(this,r.getMensaje(), Toast.LENGTH_SHORT);
+                toast.show();
+                System.out.println("GRABANDO COMENTARIO");
+                etComentario.setText("");
+
+                /**LISTA LOS COMENTARIOS RECIENTES
+                 * */
+                ListarComentarios();
+            }
         }
     }
 
@@ -207,7 +244,11 @@ public class DetalleLocal extends AppCompatActivity implements OnTaskCompleted {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.guardaComentario:
-                GuardarComentario(view);
+                try {
+                    GuardarComentario(view);
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
 //                Intent intent2 = new Intent(this, Ingreso.class);
 //                startActivity(intent2);
 
