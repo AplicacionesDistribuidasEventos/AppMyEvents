@@ -1,6 +1,7 @@
 package com.example.edwin.appmyevents.interfaz.Controlador;
 
 import android.content.Context;
+import android.view.View;
 
 import com.example.edwin.appmyevents.interfaz.LoginActivity;
 import com.example.edwin.appmyevents.interfaz.Modelo.Respuesta;
@@ -36,5 +37,10 @@ public class ReservaLocal implements OnTaskCompleted{
                 Respuesta r = (Respuesta) clienteRest.getResult(Respuesta.class);
             }
         }
+    }
+
+    @Override
+    public void onClick(View view) {
+
     }
 }

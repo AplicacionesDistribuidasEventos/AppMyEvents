@@ -4,6 +4,9 @@ package com.example.edwin.appmyevents.interfaz.Controlador;
 //import com.cuenca.myevents.testscategoriaeventos_asistenciaeventos.Modelo.Respuesta;
 //import com.cuenca.myevents.testscategoriaeventos_asistenciaeventos.Utilidades.ClienteRest;
 //import com.cuenca.myevents.testscategoriaeventos_asistenciaeventos.Utilidades.OnTaskCompleted;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+
 import com.example.edwin.appmyevents.interfaz.LoginActivity;
 import com.example.edwin.appmyevents.interfaz.Modelo.Respuesta;
 import com.example.edwin.appmyevents.interfaz.Utilidades.ClienteRest;
@@ -11,7 +14,7 @@ import com.example.edwin.appmyevents.interfaz.Utilidades.OnTaskCompleted;
 //import com.google.android.gms.common.api.GoogleApiClient;
 
 
-public class Confirmar_Asistencia implements OnTaskCompleted{
+public class Confirmar_Asistencia extends AppCompatActivity implements OnTaskCompleted{
     private ClienteRest clienteRest;
     private int WS_CONSULTA = 1;
 
@@ -39,5 +42,10 @@ public class Confirmar_Asistencia implements OnTaskCompleted{
                 Respuesta r = (Respuesta) clienteRest.getResult(Respuesta.class);
             }
         }
+    }
+
+    @Override
+    public void onClick(View view) {
+
     }
 }

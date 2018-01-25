@@ -57,8 +57,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     /**
      * DIRECCION IP QUE SE VA A ESTABLECER EN TODOS LOS WS
      * */
-    public static String dir_ip = "192.168.10.105";
 
+    public static String dir_ip = "192.168.10.105";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,8 +69,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         btnLogin.setOnClickListener(this);
         correlogin = (EditText) findViewById(R.id.txtCorreoLogin);
         passwordlogin = (EditText) findViewById(R.id.txtPasswordLogin);
-        contex = this;
-        prefs=  getSharedPreferences("eventos", Context.MODE_PRIVATE);
+
+        /*contex = this;
+        prefs=  getSharedPreferences("eventos", Context.MODE_PRIVATE);*/
         opcionMostrar = (CheckBox)findViewById(R.id.opcion_mostrar);
 
         Button btnRegistroPrincipal = (Button) findViewById(R.id.btnRegistroPrincipal);
@@ -78,7 +79,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
     }
-
 
 
     @Override
@@ -94,9 +94,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 }
                 break;
 
-
             case R.id.btnRegresar2:
-                Intent intent = new Intent(this,Ingreso.class);
+                Intent intent = new Intent(this,LoginActivity.class);
                 startActivity(intent);
                 break;
 
@@ -104,7 +103,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 Intent intent2 = new Intent(this,RegistroActivity.class);
                 startActivity(intent2);
                 break;
-
             default:
                 break;
 
@@ -181,9 +179,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
                 ///ling mantiene
-                SharedPreferences.Editor editor = prefs.edit();
+                /*SharedPreferences.Editor editor = prefs.edit();
                 editor.putBoolean("login", true);
-                editor.commit();
+                editor.commit();*/
                 ///fin login
 
                 Intent i2 = new Intent(this,MainActivity.class);

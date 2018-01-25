@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context="com.example.edwin.appmyevents.interfaz.DetalleLocal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:weightSum="4"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/fotolocaldetalle"
+            android:layout_width="match_parent"
+            android:layout_height="250sp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/event" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="4"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/nombredetalle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="TextView" />
+            <TextView
+                android:id="@+id/descripciondetalle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/capacidadetalle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/costodetalle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20 USD"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:id="@+id/ifaf"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/dolar"
+                    />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/reserva"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Reserva" />
+
+                <Button
+                    android:id="@+id/llamada"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="LLamar" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnmapa"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Ubicar"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="5dp"
+            android:id="@+id/ratings"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content">
+                <CheckBox
+                    android:id="@+id/estrella"
+                    style="?android:attr/starStyle"
+                    android:tag="1"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <CheckBox
+                    android:id="@+id/estrella2"
+                    style="?android:attr/starStyle"
+                    android:layout_gravity="center_horizontal"
+                    android:tag="2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <CheckBox
+                    android:id="@+id/estrella3"
+                    style="?android:attr/starStyle"
+                    android:layout_gravity="center_horizontal"
+                    android:tag="3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <CheckBox
+                    android:id="@+id/estrella4"
+                    style="?android:attr/starStyle"
+                    android:tag="4"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <CheckBox
+                    android:id="@+id/estrella5"
+                    style="?android:attr/starStyle"
+                    android:layout_gravity="center_horizontal"
+                    android:tag="5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+    <ListView
+        android:id="@+id/listadetalle"
+        android:layout_width="387dp"
+        android:layout_height="376dp"
+        android:visibility="visible"></ListView>
+
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/etComentario"
+                android:hint="Ingresa un comentario"/>
+
+            <Button
+                android:id="@+id/guardaComentario"
+                android:layout_width="match_parent"
+                android:onClick="GuardarComentario"
+                android:text="Guardar Comentario"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

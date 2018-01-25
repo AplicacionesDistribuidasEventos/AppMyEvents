@@ -11,17 +11,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.edwin.appmyevents.R;
-import com.example.edwin.appmyevents.interfaz.Controlador.Confirmar_Asistencia;
 import com.example.edwin.appmyevents.interfaz.Controlador.ReservaLocal;
-import com.example.edwin.appmyevents.interfaz.ListadoLocalesActivity;
-import com.example.edwin.appmyevents.interfaz.LocalesActivity;
+import com.example.edwin.appmyevents.interfaz.ListarLocalesBusquedaActivity;
 import com.example.edwin.appmyevents.interfaz.LoginActivity;
-import com.example.edwin.appmyevents.interfaz.Modelo.Evento;
 import com.example.edwin.appmyevents.interfaz.Modelo.Local;
 import com.squareup.picasso.Picasso;
 
@@ -33,9 +32,11 @@ public class LocalBusquedaAdapter extends BaseAdapter {
 
 
     public class ViewHolder {
-        TextView tvnombre, tvDescripcion, tvCosto, tvcapacidad;
+        TextView tvnombre, tvDescripcion, tvCosto, tvcapacidad, tvcomentario;
         ImageView tvfoto;
         Button btnreserva, llamar;
+        EditText ecomentario;
+        ListView listView;
     }
 
     public List<Local> listaLocal =new ArrayList<Local>();
@@ -83,6 +84,9 @@ public class LocalBusquedaAdapter extends BaseAdapter {
             viewHolder.tvfoto = rowView.findViewById(R.id.fotolocal);
             viewHolder.btnreserva = rowView.findViewById(R.id.reserva);
             viewHolder.llamar = rowView.findViewById(R.id.llamada);
+            //viewHolder.ecomentario = rowView.findViewById(R.id.comentario);
+            //viewHolder.tvcomentario = rowView.findViewById(R.id.comenariovista);
+            //viewHolder.listView = rowView.findViewById(R.id.listaComentarios);
             System.out.println("Siiiiiiiiiiiiiiiiiiiii33333333333333333333333333");
             rowView.setTag(viewHolder);
 
@@ -100,27 +104,30 @@ public class LocalBusquedaAdapter extends BaseAdapter {
         System.out.println("http://"+LoginActivity.dir_ip+"/MyEvents/"+local.getFotoPerfil());
         Picasso.with(context).load("http://"+ LoginActivity.dir_ip+"/MyEvents/"+local.getFotoPerfil()).fit().into(viewHolder.tvfoto);
 
-        viewHolder.btnreserva.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Local local1 = (Local) getItem(position);
-                Toast.makeText(context,"Reserva Satisfactoria..!!!:"+local1.getCodigo(),Toast.LENGTH_SHORT).show();
-                String fecha = LocalesActivity.fec;
-                ReservaLocal res = new ReservaLocal(local1.getCodigo(), fecha);
-            }
-        });
 
-        viewHolder.llamar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Local l = (Local) getItem(position);
-                Intent i = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+l.getTelefono()));
-                if(ActivityCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE)!= PackageManager.PERMISSION_GRANTED)
-                    return;
-                    context.startActivity(i);
+//        viewHolder.btnreserva.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Local local1 = (Local) getItem(position);
+//                Toast.makeText(context,"Reserva Satisfactoria..!!!:"+local1.getCodigo(),Toast.LENGTH_SHORT).show();
+//                String fecha = ListarLocalesBusquedaActivity.fec;
+//                ReservaLocal res = new ReservaLocal(local1.getCodigo(), fecha);
+//            }
+//        });
+//
+//        viewHolder.llamar.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Local l = (Local) getItem(position);
+//                Intent i = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+l.getTelefono()));
+//                if(ActivityCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE)!= PackageManager.PERMISSION_GRANTED)
+//                    return;
+//                    context.startActivity(i);
+//
+//            }
+//        });
 
-            }
-        });
+        //viewHolder.ecomentario
 
         return rowView;
     }

@@ -63,6 +63,11 @@ public class ListadoEventosActivity extends AppCompatActivity implements OnTaskC
     }
 
     @Override
+    public void onClick(View view) {
+
+    }
+
+    @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         String valor = (String) adapterView.getItemAtPosition(i);
         Intent muestraEventos = new Intent(this, MuestraEvento.class);
