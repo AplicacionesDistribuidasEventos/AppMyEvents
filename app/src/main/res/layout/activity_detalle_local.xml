@@ -92,6 +92,12 @@
 
             </LinearLayout>
 
+            <Button
+                android:id="@+id/btnmapa"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Ubicar"/>
+
         </LinearLayout>
 
         <LinearLayout
@@ -143,10 +149,13 @@
                     android:layout_height="wrap_content" />
             </LinearLayout>
 
-            <ListView
-                android:id="@+id/listadetalle"
-                android:layout_width="350dp"
-                android:layout_height="100dp"></ListView>
+    <ListView
+        android:id="@+id/listadetalle"
+        android:layout_width="387dp"
+        android:layout_height="376dp"
+        android:visibility="visible"></ListView>
+
+
 
             <EditText
                 android:layout_width="match_parent"

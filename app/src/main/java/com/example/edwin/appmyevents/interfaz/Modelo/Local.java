@@ -10,6 +10,8 @@ public class Local {
     private String costo;
     private String fotoPerfil;
     private String telefono;
+    private String latitud;
+    private String longitud;
 
     public String getTelefono() {
         return telefono;
@@ -67,6 +69,22 @@ public class Local {
         this.costo = costo;
     }
 
+    public String getLatitud() {
+        return latitud;
+    }
+
+    public void setLatitud(String latitud) {
+        this.latitud = latitud;
+    }
+
+    public String getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(String longitud) {
+        this.longitud = longitud;
+    }
+
     @Override
     public String toString() {
         return "Local{" +
@@ -77,6 +95,8 @@ public class Local {
                 ", costo='" + costo + '\'' +
                 ", fotoPerfil='" + fotoPerfil + '\'' +
                 ", telefono='" + telefono + '\'' +
+                ", latitud='" + latitud + '\'' +
+                ", longitud='" + longitud + '\'' +
                 '}';
     }
 }
