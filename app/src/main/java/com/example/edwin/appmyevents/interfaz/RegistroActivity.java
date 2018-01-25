@@ -86,7 +86,7 @@ public class RegistroActivity extends AppCompatActivity implements View.OnClickL
 
                 break;
             case R.id.btnRegresar2:
-                Intent intent = new Intent(this,Ingreso.class);
+                Intent intent = new Intent(this,LoginActivity.class);
                 startActivity(intent);
                 break;
             default:

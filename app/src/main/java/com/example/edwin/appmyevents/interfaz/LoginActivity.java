@@ -57,7 +57,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     /**
      * DIRECCION IP QUE SE VA A ESTABLECER EN TODOS LOS WS
      * */
-    public static String dir_ip = "192.168.1.108";
+    public static String dir_ip = "192.168.10.105";
 
 
     @Override
@@ -72,6 +72,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         contex = this;
         prefs=  getSharedPreferences("eventos", Context.MODE_PRIVATE);
         opcionMostrar = (CheckBox)findViewById(R.id.opcion_mostrar);
+
+        Button btnRegistroPrincipal = (Button) findViewById(R.id.btnRegistroPrincipal);
+        btnRegistroPrincipal.setOnClickListener(this);
 
 
     }
@@ -97,8 +100,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(intent);
                 break;
 
+            case R.id.btnRegistroPrincipal:
+                Intent intent2 = new Intent(this,RegistroActivity.class);
+                startActivity(intent2);
+                break;
+
             default:
                 break;
+
 
         }
 
