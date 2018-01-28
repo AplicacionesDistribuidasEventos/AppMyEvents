@@ -14,10 +14,17 @@
     tools:showIn="@layout/activity_listado_locales"
     >
 
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_weight="0.11"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
 
     <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:id="@+id/listViewLocal"
         android:layout_alignEnd="@+id/textView4" />
 

@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity
         imgEliminarUsuario.setOnClickListener(this);
 
         ImageView imgLocales = findViewById(R.id.imgLocales);
-        imgLocales.setOnClickListener(this);
+       imgLocales.setOnClickListener(this);
 
         ImageView imgEventos = findViewById(R.id.imgCategoriaEventos);
         imgEventos.setOnClickListener(this);
@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity
         switch (view.getId()){
             case R.id.imgEliminiarUsuario:
                 eliminarUsuario();
-                Intent intent2 = new Intent(this, Ingreso.class);
+                Intent intent2 = new Intent(this, LoginActivity.class);
                 startActivity(intent2);
 
                 Context context = getApplicationContext();
@@ -180,7 +180,7 @@ public class MainActivity extends AppCompatActivity
 
         try {
 
-            String url = "http://"+LoginActivity.dir_ip+":8080/MyEvents/rs/usuarios/eliminar-usuario?id_usuario="+ LoginActivity.cod_per;
+            String url = "http://"+LoginActivity.dir_ip+":80/MyEvents/rs/usuarios/eliminar-usuario?id_usuario="+ LoginActivity.cod_per;
             clienteRest.doGet(url, null,WS_CONSULTA,true);
 
         }catch (Exception e){
@@ -196,7 +196,7 @@ public class MainActivity extends AppCompatActivity
 
         try {
 
-            String url = "http://"+LoginActivity.dir_ip+":8080/MyEvents/rs/usuarios/listado-users"+ LoginActivity.cod_per;
+            String url = "http://"+LoginActivity.dir_ip+":80/MyEvents/rs/usuarios/listado-users"+ LoginActivity.cod_per;
             clienteRest.doGet(url, null,WS_CONSULTA,true);
 
         }catch (Exception e){

@@ -74,10 +74,11 @@
 
                 <Button
                     android:id="@+id/btnAsistire"
-                    android:layout_width="100sp"
+                    android:layout_width="120sp"
                     android:layout_height="50sp"
                     android:layout_alignParentStart="true"
                     android:layout_marginEnd="20dp"
+                    android:drawableLeft="@drawable/ic_aceptar"
                     android:text="Asistire" />
 
                 <Button
@@ -85,6 +86,7 @@
                     android:layout_width="110sp"
                     android:layout_height="50sp"
                     android:layout_alignParentEnd="true"
+                
                     android:layout_marginEnd="20dp"
                     android:text="No Asistire" />
 

@@ -41,7 +41,7 @@ public class EventoxCategoria extends AppCompatActivity implements OnTaskComplet
         clienteRest = new ClienteRest(this);
         try{
             System.out.println("LISTADO CATEGORIA EVENTO");
-            String url = "http://"+ LoginActivity.dir_ip+":8080/MyEvents/rs/eventos/listado-categoria-eventos?id_categoria="+id;
+            String url = "http://"+ LoginActivity.dir_ip+":80/MyEvents/rs/eventos/listado-categoria-eventos?id_categoria="+id;
             clienteRest.doGet(url, null,WS_CONSULTA,true);
         }catch (Exception e){
             //showMensaje("Error Consulta");

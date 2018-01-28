@@ -179,10 +179,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/imgLocales"
-                    android:layout_marginLeft="8dp"
+                    android:layout_marginLeft="25dp"
                     android:layout_marginTop="98dp"
                     android:layout_toEndOf="@+id/imgEliminiarUsuario"
-                    android:text="Reservar locales"
+                    android:text="Locales"
                     android:textColor="#000000"
                     android:textSize="12dp"
                     android:textStyle="normal" />
