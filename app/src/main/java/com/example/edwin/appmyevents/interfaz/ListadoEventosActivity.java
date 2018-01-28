@@ -43,7 +43,7 @@ public class ListadoEventosActivity extends AppCompatActivity implements OnTaskC
     public void listarEvento(int idCategoria) {
         clienteRest = new ClienteRest(this);
         try {
-            String url2 = "http://"+LoginActivity.dir_ip+":8080/MyEvents/rs/eventos/listado-categoria-eventos?id_categoria=" + idCategoria;
+            String url2 = "http://"+LoginActivity.dir_ip+":80/MyEvents/rs/eventos/listado-categoria-eventos?id_categoria=" + idCategoria;
             clienteRest.doGet(url2, null, WS_CONSULTA, true);
         } catch (Exception e) {
             showMensaje("Error Consulta");

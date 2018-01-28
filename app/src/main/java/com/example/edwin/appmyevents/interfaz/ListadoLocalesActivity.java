@@ -71,7 +71,7 @@ public class ListadoLocalesActivity extends AppCompatActivity implements OnTaskC
         //Local local = new Local();
         try {
 
-            String url1 = "http://"+LoginActivity.dir_ip+":8080/MyEvents/rs/locales/listado-locales";
+            String url1 = "http://"+LoginActivity.dir_ip+":80/MyEvents/rs/locales/listado-locales";
             clienteRest.doGet(url1, null,WS_CONSULTA,true);
         }catch (Exception e){
             showMensaje("Error Consulta");
