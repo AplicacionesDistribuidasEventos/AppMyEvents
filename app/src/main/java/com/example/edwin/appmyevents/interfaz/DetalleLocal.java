@@ -103,7 +103,7 @@ public class DetalleLocal extends AppCompatActivity implements OnTaskCompleted {
         latitud = intent.getStringExtra("latitud");
         longitud = intent.getStringExtra("longitud");
 
-        Picasso.with(context).load("http://172.16.214.227/MyEvents/" + fotoPerfil).fit().centerInside().into(fotolocaldetalle);
+        Picasso.with(context).load(fotoPerfil).fit().centerInside().into(fotolocaldetalle);
         nombredetalle.setText(nombre);
         descripciondetalle.setText(descripcion);
         capacidadetalle.setText(capacidad + "");
@@ -166,7 +166,7 @@ public class DetalleLocal extends AppCompatActivity implements OnTaskCompleted {
         comentario = URLEncoder.encode(comentario, "UTF-8");
         clienteRest = new ClienteRest(this);
         try {
-            String url = "http://" + LoginActivity.dir_ip + ":80/MyEvents/rs/Comentarios/agregar-comentario-local?id_local=" + codigo + "&loc_descripcion=" + comentario + "&id_user=" + LoginActivity.cod_per;
+            String url = "http://" + LoginActivity.dir_ip + ":8080/MyEvents/rs/Comentarios/agregar-comentario-local?id_local=" + codigo + "&loc_descripcion=" + comentario + "&id_user=" + LoginActivity.cod_per;
             System.out.println("URL :  ==> " + url);
             clienteRest.doGet(url, null, WS_GUARDAR, true);
         } catch (Exception e) {
@@ -200,7 +200,7 @@ public class DetalleLocal extends AppCompatActivity implements OnTaskCompleted {
     private void ListarComentarios() {
         clienteRest = new ClienteRest(this);
         try {
-            String url = "http://" + LoginActivity.dir_ip + ":80/MyEvents/rs/Comentarios/list-comentarios-local?id_local=" + codigo;
+            String url = "http://" + LoginActivity.dir_ip + ":8080/MyEvents/rs/Comentarios/list-comentarios-local?id_local=" + codigo;
             System.out.println("URL :  ==> " + url);
             clienteRest.doGet(url, null, WS_CONSULTA, true);
         } catch (Exception e) {

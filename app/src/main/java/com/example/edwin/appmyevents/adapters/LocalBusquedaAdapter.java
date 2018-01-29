@@ -101,8 +101,8 @@ public class LocalBusquedaAdapter extends BaseAdapter {
         viewHolder.tvcapacidad.setText(local.getCapacidad());
         viewHolder.tvCosto.setText(local.getCosto()+ " USD ");
 
-        System.out.println("http://172.16.214.227/MyEvents/"+local.getFotoPerfil());
-        Picasso.with(context).load("http://172.16.214.227/MyEvents/"+local.getFotoPerfil()).fit().into(viewHolder.tvfoto);
+        System.out.println("URL: "+local.getFotoPerfil());
+        Picasso.with(context).load(local.getFotoPerfil()).fit().into(viewHolder.tvfoto);
 
 
 //        viewHolder.btnreserva.setOnClickListener(new View.OnClickListener() {

@@ -53,7 +53,7 @@ public class ConsultaAsistencias extends AppCompatActivity implements OnTaskComp
         clienteRest = new ClienteRest(this);
 
         try {
-            String url1 = "http://"+ LoginActivity.dir_ip+":80/MyEvents/rs/eventos/reporte-Aeventos?id_usuario="+ LoginActivity.cod_per;
+            String url1 = "http://"+ LoginActivity.dir_ip+":8080/MyEvents/rs/eventos/reporte-Aeventos?id_usuario="+ LoginActivity.cod_per;
             clienteRest.doGet(url1, null,WS_CONSULTA,true);
         }catch (Exception e){
             showMensaje("Error Consulta");

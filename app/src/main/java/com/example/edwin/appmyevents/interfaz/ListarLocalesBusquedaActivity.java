@@ -80,7 +80,7 @@ public class ListarLocalesBusquedaActivity extends AppCompatActivity implements 
     private void listarLocalBusqueda() {
         clienteRest = new ClienteRest(this);
         try {
-            String url = "http://"+LoginActivity.dir_ip+":80/MyEvents/rs/locales/listado-locales-fecha?fecha_SR="+tvFecha.getText();
+            String url = "http://"+LoginActivity.dir_ip+":8080/MyEvents/rs/locales/listado-locales-fecha?fecha_SR="+tvFecha.getText();
             clienteRest.doGet(url, null, WS_CONSULTA, true);
         } catch (Exception e) {
             showMensaje("Error Consulta");
