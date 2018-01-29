@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
      * DIRECCION IP QUE SE VA A ESTABLECER EN TODOS LOS WS
      * */
 
-    public static String dir_ip = "myevents.cristiantimbi.info";
+    public static String dir_ip = "myeventsapp.myeventsapp2018.com";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,7 +131,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         clienteRest = new ClienteRest(this);
 
         try {
-            String url = "http://"+dir_ip+":80/MyEvents/rs/usuarios/login";
+            String url = "http://"+LoginActivity.dir_ip+":8080/MyEvents/rs/usuarios/login";
 
             Login l = new Login();
 

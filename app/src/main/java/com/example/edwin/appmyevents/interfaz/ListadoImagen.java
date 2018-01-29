@@ -17,7 +17,7 @@ public class ListadoImagen extends AppCompatActivity {
 
         ImageView imageView = (ImageView) findViewById(R.id.listado_imagen);
         Picasso.with(this)
-                .load("http://192.168.0.102/MyEvents/imagenes/fondo.jpg")
+                .load("http://"+LoginActivity.dir_ip+"/MyEvents/imagenes/fondo.jpg")
                 .error(R.mipmap.logo)
                 .fit()
                 .centerInside()

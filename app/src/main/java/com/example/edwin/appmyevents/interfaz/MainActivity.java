@@ -177,10 +177,9 @@ public class MainActivity extends AppCompatActivity
     public void eliminarUsuario(){
 
         clienteRest = new ClienteRest(this);
-
         try {
 
-            String url = "http://"+LoginActivity.dir_ip+":80/MyEvents/rs/usuarios/eliminar-usuario?id_usuario="+ LoginActivity.cod_per;
+            String url = "http://"+LoginActivity.dir_ip+":8080/MyEvents/rs/usuarios/eliminar-usuario?id_usuario="+ LoginActivity.cod_per;
             clienteRest.doGet(url, null,WS_CONSULTA,true);
 
         }catch (Exception e){
@@ -196,7 +195,7 @@ public class MainActivity extends AppCompatActivity
 
         try {
 
-            String url = "http://"+LoginActivity.dir_ip+":80/MyEvents/rs/usuarios/listado-users"+ LoginActivity.cod_per;
+            String url = "http://"+LoginActivity.dir_ip+":8080/MyEvents/rs/usuarios/listado-users"+ LoginActivity.cod_per;
             clienteRest.doGet(url, null,WS_CONSULTA,true);
 
         }catch (Exception e){

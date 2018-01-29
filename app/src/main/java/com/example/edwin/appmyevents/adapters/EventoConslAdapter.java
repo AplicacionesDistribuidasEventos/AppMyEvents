@@ -74,39 +74,11 @@ public class EventoConslAdapter extends BaseAdapter {
             }
 
             Evento evento = listaEvento.get(position);
-
             viewHolder.tv_nombre_e.setText(evento.getNombre());
             viewHolder.tv_descripcion_e.setText(evento.getDescripcion()+"");
             viewHolder.tv_fecha_e.setText(evento.getFechaEvento());
             viewHolder.tv_costo_e.setText(evento.getCosto()+ " USD ");
 
-
-            /**
-             * ACCIONES PARA LOS BOTONES
-             * */
-/**ASISTIR*/
- /*           viewHolder.asistir.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Evento evento1 = (Evento) getItem(position);
-//                Toast.makeText(getContext(), "POSICION VISUAL: "+position, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(context,"ASISTIRE A ID:"+evento1.getCodigo(),Toast.LENGTH_SHORT).show();
-                    String estado = String.valueOf(true);
-                    Confirmar_Asistencia wsca = new Confirmar_Asistencia(evento1.getCodigo(), estado);
-                }
-            });
-/**NO ASISTIR*/
- /*           viewHolder.noasistir.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Evento currentEvento = (Evento) getItem(position);
-                    Toast.makeText(context,"NO ASISTIRE A ID:"+currentEvento.getCodigo(),Toast.LENGTH_SHORT).show();
-                    String estado = String.valueOf(false);
-                    Confirmar_Asistencia wsca = new Confirmar_Asistencia(currentEvento.getCodigo(), estado);
-
-                }
-            });
-*/
             return rowView;
         }
 
