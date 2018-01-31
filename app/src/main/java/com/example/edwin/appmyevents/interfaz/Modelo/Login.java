@@ -9,6 +9,8 @@ public class Login {
     private int id;
     private String correo;
     private String contrasenia;
+    private String nombre;
+    private String apellido;
     private String perfil;
 
     public int getId() {
@@ -43,12 +45,30 @@ public class Login {
         this.perfil = perfil;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
     @Override
     public String toString() {
         return "Login{" +
                 "id=" + id +
                 ", correo='" + correo + '\'' +
                 ", contrasenia='" + contrasenia + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
                 ", perfil='" + perfil + '\'' +
                 '}';
     }
