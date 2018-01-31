@@ -9,6 +9,7 @@ public class Login {
     private int id;
     private String correo;
     private String contrasenia;
+    private String perfil;
 
     public int getId() {
         return id;
@@ -34,12 +35,21 @@ public class Login {
         this.contrasenia = contrasenia;
     }
 
+    public String getPerfil() {
+        return perfil;
+    }
+
+    public void setPerfil(String perfil) {
+        this.perfil = perfil;
+    }
+
     @Override
     public String toString() {
         return "Login{" +
                 "id=" + id +
                 ", correo='" + correo + '\'' +
                 ", contrasenia='" + contrasenia + '\'' +
+                ", perfil='" + perfil + '\'' +
                 '}';
     }
 }
