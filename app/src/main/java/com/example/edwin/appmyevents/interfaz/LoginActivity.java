@@ -171,8 +171,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             cadenaPassword1=txtPasswordL.getText().toString();
             cadenaPassword2=usuario.get(i).getContrasenia().toString();
 
-            if ((cadenaNombre1.equals(cadenaNombre2))  && (cadenaPassword1.equals(cadenaPassword2)))
+            String rol = usuario.get(i).getPerfil().toString().toUpperCase();
+            if ((cadenaNombre1.equals(cadenaNombre2))  && (cadenaPassword1.equals(cadenaPassword2)) && rol.equals("USUARIO"))
             {
+
                 cod_per = usuario.get(0).getId();
                 showMensaje("Ingreso Exitoso !!! ");
                 System.out.println("USUARIO EXISTE");
@@ -189,7 +191,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
             }
             else {
-                showMensaje("Error de Correo u Contrasenia");
+                showMensaje("Error de Correo, Contrasenia en perfil Usuario");
             }
 
             System.out.println(i);
