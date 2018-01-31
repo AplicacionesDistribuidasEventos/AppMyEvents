@@ -8,8 +8,6 @@
     tools:context="com.example.edwin.appmyevents.interfaz.CategoriaActivity">
 
 
-
-
     <include layout="@layout/content_categoria"
          />
 

@@ -47,7 +47,7 @@ public class ListadoLocalesActivity extends AppCompatActivity implements OnTaskC
         listView = findViewById(R.id.listViewLocal);
         listaLocales(new ArrayList<Local>());
         context = this;
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        /*listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
@@ -56,7 +56,7 @@ public class ListadoLocalesActivity extends AppCompatActivity implements OnTaskC
                 intent.putExtra("id", local.getCodigo());
                 startActivity(intent);
             }
-        });
+        });*/
 
     }
 
@@ -71,7 +71,7 @@ public class ListadoLocalesActivity extends AppCompatActivity implements OnTaskC
         //Local local = new Local();
         try {
 
-            String url1 = "http://"+LoginActivity.dir_ip+":8080/MyEvents/rs/locales/listado-locales";
+            String url1 = "http://"+LoginActivity.dir_ip+"/MyEvents/rs/locales/listado-locales";
             clienteRest.doGet(url1, null,WS_CONSULTA,true);
         }catch (Exception e){
             showMensaje("Error Consulta");
@@ -86,6 +86,25 @@ public class ListadoLocalesActivity extends AppCompatActivity implements OnTaskC
                 ArrayList<Local> locals = (ArrayList<Local>) clienteRest.getResultList(Local.class);
                 LocalAdapter localAdapter = new LocalAdapter(locals, context);
                 listView.setAdapter(localAdapter);
+
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        Local local = (Local) adapterView.getItemAtPosition(i);
+                        Intent intent = new Intent(context, DetalleLocal.class);
+                        intent.putExtra("codigo", local.getCodigo());
+                        intent.putExtra("nombre", local.getNombre());
+                        intent.putExtra("descripcion", local.getDescripcion());
+                        intent.putExtra("capacidad", local.getCapacidad());
+                        intent.putExtra("costo", local.getCosto());
+                        intent.putExtra("fotoPerfil", local.getFotoPerfil());
+                        intent.putExtra("telefono", local.getTelefono());
+                        intent.putExtra("latitud", local.getLatitud());
+                        intent.putExtra("longitud", local.getLongitud());
+
+                        startActivity(intent);
+                    }
+                });
             }
         }
 

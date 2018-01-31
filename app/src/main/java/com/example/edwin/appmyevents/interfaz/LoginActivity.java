@@ -59,6 +59,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
      * */
 
     public static String dir_ip = "myeventsapp.myeventsapp2018.com";
+    //public static String dir_ip = "http://myeventsapp.myeventsapp2018.com";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,7 +132,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         clienteRest = new ClienteRest(this);
 
         try {
-            String url = "http://"+LoginActivity.dir_ip+":8080/MyEvents/rs/usuarios/login";
+            String url = "http://"+LoginActivity.dir_ip+"/MyEvents/rs/usuarios/login";
 
             Login l = new Login();
 

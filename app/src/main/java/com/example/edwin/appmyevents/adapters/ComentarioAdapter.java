@@ -48,7 +48,7 @@ public class ComentarioAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         View rowView = convertView;
-        ComentarioAdapter.ViewHolder viewHolder;
+        ViewHolder viewHolder;
         if (rowView == null) {
             LayoutInflater inflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -57,8 +57,9 @@ public class ComentarioAdapter extends BaseAdapter {
             viewHolder.tvnombres = rowView.findViewById(R.id.nombres);
             viewHolder.tvFecha =rowView.findViewById(R.id.fecha);
             viewHolder.tvComentario = rowView.findViewById(R.id.comentario);
+            rowView.setTag(viewHolder);
         } else {
-            viewHolder = (ComentarioAdapter.ViewHolder) convertView.getTag();
+            viewHolder = (ViewHolder) convertView.getTag();
         }
 
         Comentario local = listaLocal.get(position);

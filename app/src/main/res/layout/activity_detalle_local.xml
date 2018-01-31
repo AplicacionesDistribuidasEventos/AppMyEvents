@@ -78,13 +78,18 @@
 
                 <Button
                     android:id="@+id/reserva"
+                    android:background="@color/com_facebook_blue"
+                    android:textColor="@android:color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
                     android:layout_weight="1"
                     android:text="Reserva" />
 
                 <Button
                     android:id="@+id/llamada"
+                    android:background="@color/com_facebook_blue"
+                    android:textColor="@android:color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -94,6 +99,9 @@
 
             <Button
                 android:id="@+id/btnmapa"
+                android:background="@color/colorAccent"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Ubicar"/>
