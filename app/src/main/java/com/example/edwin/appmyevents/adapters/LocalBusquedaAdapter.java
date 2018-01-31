@@ -100,34 +100,8 @@ public class LocalBusquedaAdapter extends BaseAdapter {
         viewHolder.tvDescripcion.setText(local.getDescripcion()+"");
         viewHolder.tvcapacidad.setText(local.getCapacidad());
         viewHolder.tvCosto.setText(local.getCosto()+ " USD ");
-
         System.out.println("URL: "+local.getFotoPerfil());
         Picasso.with(context).load(local.getFotoPerfil()).fit().into(viewHolder.tvfoto);
-
-
-//        viewHolder.btnreserva.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Local local1 = (Local) getItem(position);
-//                Toast.makeText(context,"Reserva Satisfactoria..!!!:"+local1.getCodigo(),Toast.LENGTH_SHORT).show();
-//                String fecha = ListarLocalesBusquedaActivity.fec;
-//                ReservaLocal res = new ReservaLocal(local1.getCodigo(), fecha);
-//            }
-//        });
-//
-//        viewHolder.llamar.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Local l = (Local) getItem(position);
-//                Intent i = new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+l.getTelefono()));
-//                if(ActivityCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE)!= PackageManager.PERMISSION_GRANTED)
-//                    return;
-//                    context.startActivity(i);
-//
-//            }
-//        });
-
-        //viewHolder.ecomentario
 
         return rowView;
     }

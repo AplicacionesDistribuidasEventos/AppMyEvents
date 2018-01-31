@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fond1"
     tools:context="com.example.edwin.appmyevents.interfaz.ListarLocalesBusquedaActivity">
 
     <include layout="@layout/content_local_busqueda"

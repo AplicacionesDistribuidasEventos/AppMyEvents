@@ -23,7 +23,7 @@ public class ReservaLocal implements OnTaskCompleted{
         clienteRest = new ClienteRest(this);
         try {
             System.out.println("CODIGO PERSONA:  "+ LoginActivity.cod_per);
-            String url = "http://"+LoginActivity.dir_ip+":8080/MyEvents/rs/locales/crear-reservas?id_u="+LoginActivity.cod_per+"&id_l="+id_local+"&fecha_e="+ fecha;
+            String url = "http://"+LoginActivity.dir_ip+"/MyEvents/rs/locales/crear-reservas?id_u="+LoginActivity.cod_per+"&id_l="+id_local+"&fecha_e="+ fecha;
             clienteRest.doGet(url, null,WS_CONSULTA,true);
         }catch (Exception e) {
             e.printStackTrace();

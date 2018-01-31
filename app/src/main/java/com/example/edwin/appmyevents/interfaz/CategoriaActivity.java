@@ -57,7 +57,7 @@ public class CategoriaActivity extends AppCompatActivity implements OnTaskComple
         clienteRest = new ClienteRest(this);
         try {
             //String url = "http://192.168.0.102:8080/MyEvents/rs/usuarios/listado-categorias";
-            String url = "http://"+LoginActivity.dir_ip+":8080/MyEvents/rs/usuarios/listado-categorias";
+            String url = "http://"+LoginActivity.dir_ip+"/MyEvents/rs/usuarios/listado-categorias";
             clienteRest.doGet(url, null, WS_CONSULTA, true);
         } catch (Exception e) {
             showMensaje("Error Consulta");

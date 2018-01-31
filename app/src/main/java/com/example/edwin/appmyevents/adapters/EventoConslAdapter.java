@@ -19,11 +19,8 @@ import java.util.List;
 
 public class EventoConslAdapter extends BaseAdapter {
 
-
-
         public class ViewHolder {
             TextView tv_nombre_e, tv_descripcion_e, tv_fecha_e, tv_costo_e;
-//            Button asistir, noasistir;
         }
 
         public List<Evento> listaEvento=new ArrayList<Evento>();
@@ -53,9 +50,8 @@ public class EventoConslAdapter extends BaseAdapter {
 
         @Override
         public View getView(final int position, View convertView, ViewGroup parent) {
-
             View rowView = convertView;
-            EventoConslAdapter.ViewHolder viewHolder;
+            ViewHolder viewHolder;
             if (rowView == null) {
                 LayoutInflater inflater = (LayoutInflater) context
                         .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -65,12 +61,10 @@ public class EventoConslAdapter extends BaseAdapter {
                 viewHolder.tv_descripcion_e =rowView.findViewById(R.id.descripcion_e);
                 viewHolder.tv_fecha_e = rowView.findViewById(R.id.fecha_e);
                 viewHolder.tv_costo_e = rowView.findViewById(R.id.costo_e);
-//                viewHolder.asistir = rowView.findViewById(R.id.btnAsistire);
-//                viewHolder.noasistir = rowView.findViewById(R.id.btnNoAsistire);
                 rowView.setTag(viewHolder);
 
             } else {
-                viewHolder = (EventoConslAdapter.ViewHolder) convertView.getTag();
+                viewHolder = (ViewHolder) convertView.getTag();
             }
 
             Evento evento = listaEvento.get(position);

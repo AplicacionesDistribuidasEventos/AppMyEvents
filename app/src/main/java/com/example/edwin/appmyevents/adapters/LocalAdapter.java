@@ -8,7 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.edwin.appmyevents.R;
-import com.example.edwin.appmyevents.interfaz.LoginActivity;
 import com.example.edwin.appmyevents.interfaz.Modelo.Local;
 import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
@@ -50,17 +49,18 @@ public class LocalAdapter extends BaseAdapter {
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
         View rowView = convertView;
-        LocalAdapter.ViewHolder viewHolder;
+        ViewHolder viewHolder;
         if (rowView == null) {
             LayoutInflater inflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             rowView = inflater.inflate(R.layout.layout_adapter_local, null);
-            viewHolder = new LocalAdapter.ViewHolder();
+            viewHolder = new ViewHolder();
             viewHolder.tvnombres = rowView.findViewById(R.id.nombress);
             viewHolder.tvDescripcion =rowView.findViewById(R.id.descripcion);
             viewHolder.ivimagen = rowView.findViewById(R.id.imageViewLocal);
+            rowView.setTag(viewHolder);
         } else {
-            viewHolder = (LocalAdapter.ViewHolder) convertView.getTag();
+            viewHolder = (ViewHolder) convertView.getTag();
         }
 
         Local local = listaLocal.get(position);
