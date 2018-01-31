@@ -27,11 +27,11 @@
             <item
                 android:id="@+id/nav_ayuda"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Ayuda" />
+                android:title="Misión y Visión" />
             <item
                 android:id="@+id/nav_ajustes"
                 android:icon="@drawable/ic_menu_manage"
-                android:title="Ajustes" />
+                android:title="Cerrar Sesion" />
         </menu>
     </item>
 
