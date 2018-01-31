@@ -78,7 +78,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         Button btnRegistroPrincipal = (Button) findViewById(R.id.btnRegistroPrincipal);
         btnRegistroPrincipal.setOnClickListener(this);
 
-
     }
 
 
