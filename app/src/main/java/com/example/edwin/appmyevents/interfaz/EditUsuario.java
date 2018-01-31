@@ -62,7 +62,7 @@ public class EditUsuario extends AppCompatActivity implements OnTaskCompleted, V
                 setearValores();
                 ac.actualizarUsuario(nombreN, apellidoN, correoN);
 
-                Intent intent = new Intent(this,MainActivity.class);
+                Intent intent = new Intent(this,LoginActivity.class);
                 startActivity(intent);
 
                 Context context = getApplicationContext();

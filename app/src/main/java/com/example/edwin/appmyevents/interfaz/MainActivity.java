@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.edwin.appmyevents.R;
@@ -63,6 +64,17 @@ public class MainActivity extends AppCompatActivity
 
         ImageView btnlistado = (ImageView) findViewById(R.id.btnLocalBusqueda);
         btnlistado.setOnClickListener(this);
+
+        /**CARGA DE DATOS EN EL MENU LATERAL
+         * */
+        NavigationView navigationVie = (NavigationView) findViewById(R.id.nav_view);
+        navigationVie.setNavigationItemSelectedListener(this);
+        View header = navigationVie.getHeaderView(0);
+        TextView MEUsuar = (TextView) header.findViewById(R.id.MEUsuario);
+        TextView MECorr = (TextView) header.findViewById(R.id.MECorreo);
+        System.out.println("OBT:    "+LoginActivity.user+" "+LoginActivity.email);
+        MEUsuar.setText(" "+LoginActivity.user);
+        MECorr.setText(" "+LoginActivity.email);
 
     }
 

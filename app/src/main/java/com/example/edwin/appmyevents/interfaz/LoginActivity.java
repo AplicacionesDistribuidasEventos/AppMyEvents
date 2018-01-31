@@ -52,6 +52,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     SharedPreferences prefs ;
     Context contex;
 
+    /**DATOS PARA CARGAR*/
+    public static String user;
+    public static String email;
+
+
 
 
     /**
@@ -77,6 +82,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         Button btnRegistroPrincipal = (Button) findViewById(R.id.btnRegistroPrincipal);
         btnRegistroPrincipal.setOnClickListener(this);
+
+        /**ATRIBUTO MAPEADO PARA LA CARGA EN EL MENUITEM
+         * */
+
+        //MEUsuario = findViewById(R.id.MEUsuario);
+        //MECorreo = findViewById(R.id.MECorreo);
 
     }
 
@@ -172,6 +183,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             cadenaPassword2=usuario.get(i).getContrasenia().toString();
 
             String rol = usuario.get(i).getPerfil().toString().toUpperCase();
+
             if ((cadenaNombre1.equals(cadenaNombre2))  && (cadenaPassword1.equals(cadenaPassword2)) && rol.equals("USUARIO"))
             {
 
@@ -185,6 +197,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 editor.putBoolean("login", true);
                 editor.commit();*/
                 ///fin login
+
+                /**CARGANDO LOS DATOS EN EL HEADER
+                 * */
+                user = usuario.get(i).getNombre()+" "+usuario.get(i).getApellido();
+                email = usuario.get(i).getCorreo();
+                System.out.println("DATOSSSSSS:  "+user+" "+email);
 
                 Intent i2 = new Intent(this,MainActivity.class);
                 startActivity(i2);
