@@ -125,11 +125,23 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(MainActivity.this, EditUsuario.class);
             startActivity(intent);
 
+        } else if (id == R.id.nav_categoria) {
+
+            Intent intent = new Intent(MainActivity.this, CategoriaActivity.class);
+            startActivity(intent);
+
+        } else if (id == R.id.nav_lista_locales) {
+
+            Intent intent = new Intent(MainActivity.this, ListadoLocalesActivity.class);
+            startActivity(intent);
+
         } else if (id == R.id.nav_ayuda) {
             Intent intent = new Intent(MainActivity.this, AyudaActivity.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_ajustes) {
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
 
         }
 
